@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Encuentra tu Cargador</title>
+
+    <!-- Enlaza tu archivo de estilos principal -->
+    <link rel="stylesheet" href="assets/css/Style.css" />
+
+    <!-- Enlaza tu archivo JavaScript -->
+    <script defer src="assets/js/App.js"></script>
+</head>
+<body>
+
+<!-- Contenedor principal que aloja la sección izquierda (login-left) y derecha (login-right) -->
+<div class="login-container">
+
+    <!-- Sección Izquierda: Bienvenida e Íconos Sociales -->
+    <div class="login-left">
+        <h1>Bienvenido</h1>
+        <p>Encuentra y reserva fácilmente cargadores para tu coche eléctrico.</p>
+
+        <!-- Íconos Sociales -->
+        <div class="social-icons">
+            <a href="https://www.facebook.com/" target="_blank">
+                <img src="assets/icons/facebook.ico" alt="Facebook">
+            </a>
+            <a href="https://x.com/" target="_blank">
+                <img src="assets/icons/twitter.ico" alt="Twitter">
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+                <img src="assets/icons/instagram.ico" alt="Instagram">
+            </a>
+            <a href="https://www.youtube.com/" target="_blank">
+                <img src="assets/icons/youtube.ico" alt="YouTube">
+            </a>
+        </div>
+    </div>
+
+    <!-- Sección Derecha: Formulario de Inicio de Sesión -->
+    <div class="login-right">
+        <h2>Iniciar Sesión</h2>
+
+        <form id="loginForm" action="#" method="POST">
+            <!-- Correo Electrónico -->
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" name="email" required />
+
+            <!-- Contraseña + Ojo (SVG) para mostrar/ocultar -->
+            <label for="password">Contraseña</label>
+            <div class="password-container">
+                <input type="password" id="password" name="password" required />
+
+                <!-- Botón con ícono de ojo (SVG) por defecto -->
+                <button type="button" id="togglePassword" class="toggle-password-btn">
+                    <!-- Ícono de "ojo abierto" (SVG) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"
+                         width="24" height="24">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Checkbox Recordarme -->
+            <div class="remember-me">
+                <input type="checkbox" id="remember" />
+                <label for="remember">Recordarme</label>
+            </div>
+
+            <!-- Botón de Iniciar Sesión (type="submit") -->
+            <button type="submit" class="login-btn">Iniciar Sesión</button>
+
+            <!-- Enlace para "¿Olvidaste tu contraseña?" (abre un modal) -->
+            <p>
+                <a href="#" id="forgotPasswordLink">¿Olvidaste tu contraseña?</a>
+            </p>
+        </form>
+
+        <!-- Términos y Privacidad (abren modales) -->
+        <p class="terms">
+            Al iniciar sesión, aceptas nuestros
+            <a href="#" id="termsLink">Términos de Servicio</a> y
+            <a href="#" id="privacyLink">Política de Privacidad</a>.
+        </p>
+    </div>
+</div>
+
+<!-- MODAL: Olvidaste tu Contraseña -->
+<div class="modal" id="forgotPasswordModal">
+    <div class="modal-content">
+        <span class="close-btn" id="closeForgotModal">&times;</span>
+        <h2>Recupera tu cuenta</h2>
+        <p>Introduce tu correo electrónico para buscar tu cuenta.</p>
+        <!-- Campo para introducir el correo en el modal -->
+        <label for="recoverEmail" class="modal-label">Correo electrónico</label>
+        <input type="email" id="recoverEmail" placeholder="Correo electrónico" />
+        <div class="modal-actions">
+            <button id="cancelRecover">Cancelar</button>
+            <button id="sendRecover">Buscar</button>
+        </div>
+        <p id="recoverMessage" class="recover-message"></p>
+    </div>
+</div>
+
+<!-- MODAL: Términos de Servicio -->
+<div class="modal" id="termsModal">
+    <div class="modal-content">
+        <span class="close-btn" id="closeTermsModal">&times;</span>
+        <h2>Términos de Servicio</h2>
+        <div class="terms-content">
+            <p><strong>1. Objeto</strong><br>
+                El presente documento regula el acceso y uso de la aplicación web "Encuentra tu Cargador", diseñada para facilitar la localización y reserva de plazas de aparcamiento con cargadores para vehículos eléctricos. Al utilizar la aplicación, el usuario acepta cumplir y estar sujeto a estos Términos de Servicio.
+            </p>
+            <p><strong>2. Aceptación de los Términos</strong><br>
+                El acceso y uso de "Encuentra tu Cargador" implica la aceptación plena y sin reservas de estos términos. Si el usuario no está de acuerdo con alguno de los términos aquí establecidos, deberá abstenerse de utilizar la aplicación.
+            </p>
+            <p><strong>3. Descripción del Servicio</strong><br>
+                "Encuentra tu Cargador" es una plataforma que permite a los usuarios:
+            <ul>
+                <li>Localizar cargadores para vehículos eléctricos cercanos mediante geolocalización.</li>
+                <li>Consultar información detallada de cada cargador (tipo, estado, nivel de carga, coste, etc.).</li>
+                <li>Reservar una plaza de aparcamiento con cargador durante un tiempo determinado.</li>
+                <li>Recibir notificaciones en tiempo real sobre el estado del cargador y sus reservas.</li>
+            </ul>
+            </p>
+            <p><strong>4. Registro y Seguridad de la Cuenta</strong><br>
+                Para acceder a determinadas funcionalidades de la aplicación, el usuario deberá registrarse y crear una cuenta. El usuario se compromete a:
+            <ul>
+                <li>Proporcionar información veraz y actualizada durante el registro.</li>
+                <li>Mantener la confidencialidad de sus credenciales de acceso.</li>
+                <li>Notificar de inmediato cualquier uso no autorizado de su cuenta.</li>
+            </ul>
+            </p>
+            <p><strong>5. Uso Permitido y Prohibido</strong><br>
+                El usuario se compromete a utilizar la aplicación conforme a la legislación vigente, la moral y las buenas costumbres. Queda expresamente prohibido:
+            <ul>
+                <li>Utilizar la aplicación con fines ilícitos, fraudulentos o no autorizados.</li>
+                <li>Interferir o intentar interferir en el normal funcionamiento de la plataforma.</li>
+                <li>Reproducir, distribuir o modificar, total o parcialmente, cualquier contenido de la aplicación sin la debida autorización.</li>
+            </ul>
+            </p>
+            <p><strong>6. Propiedad Intelectual</strong><br>
+                Todos los contenidos, logotipos, diseños, textos y elementos gráficos de "Encuentra tu Cargador" son propiedad exclusiva de sus respectivos titulares y están protegidos por las leyes de propiedad intelectual. Queda prohibida su reproducción, distribución o modificación sin autorización expresa.
+            </p>
+            <p><strong>7. Limitación de Responsabilidad</strong><br>
+                La aplicación se ofrece "tal cual" y "según disponibilidad", sin garantías de ningún tipo, ya sean explícitas o implícitas. "Encuentra tu Cargador" no garantiza la exactitud, integridad o actualización de la información ofrecida, y no será responsable de:
+            <ul>
+                <li>Daños directos, indirectos, incidentales o consecuentes derivados del uso o la imposibilidad de uso de la aplicación.</li>
+                <li>Errores, omisiones o interrupciones en el servicio.</li>
+            </ul>
+            </p>
+            <p><strong>8. Modificaciones a los Términos</strong><br>
+                Nos reservamos el derecho de modificar estos Términos de Servicio en cualquier momento. Las modificaciones serán publicadas en la aplicación y, en caso de cambios significativos, se notificará a los usuarios. El uso continuado de la plataforma implicará la aceptación de los términos actualizados.
+            </p>
+            <p><strong>9. Legislación Aplicable y Jurisdicción</strong><br>
+                Estos Términos se regirán por la legislación vigente en [indicar país o región]. Cualquier controversia derivada del uso de la aplicación será sometida a los tribunales competentes de dicha jurisdicción.
+            </p>
+            <p><strong>10. Contacto</strong><br>
+                Para cualquier consulta, reclamación o sugerencia relacionada con estos Términos de Servicio, el usuario puede ponerse en contacto a través del siguiente medio: [Indicar correo electrónico u otro medio de contacto].
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: Política de Privacidad -->
+<div class="modal" id="privacyModal">
+    <div class="modal-content">
+        <span class="close-btn" id="closePrivacyModal">&times;</span>
+        <h2>Política de Privacidad</h2>
+        <p>
+            La presente Política de Privacidad describe cómo recopilamos, usamos y protegemos
+            su información personal cuando utiliza nuestro sitio web. Al acceder y utilizar
+            este sitio, usted acepta los términos de esta política. Si no está de acuerdo con
+            estos términos, le rogamos que no utilice este sitio.
+        </p>
+        <p><strong>1. Recopilación de información</strong></p>
+        <p>
+            Podremos recopilar información personal que usted nos proporcione de forma
+            voluntaria a través de formularios o al registrarse en nuestro sitio, incluyendo
+            (pero no limitado a) su nombre, dirección de correo electrónico, número de teléfono
+            y otros datos de contacto. También podemos recopilar información sobre el uso de
+            nuestro sitio, como las secciones visitadas o las fechas y horas de acceso.
+        </p>
+        <p><strong>2. Uso de la información</strong></p>
+        <p>
+            La información que recopilamos se utiliza principalmente para ofrecerle nuestros
+            servicios, mejorar la experiencia de usuario, procesar sus solicitudes, comunicarnos
+            con usted y brindarle soporte técnico. También podemos emplear sus datos para
+            personalizar el contenido y los anuncios que ve, así como para fines de análisis
+            estadístico interno.
+        </p>
+        <p><strong>3. Divulgación de información a terceros</strong></p>
+        <p>
+            No venderemos, intercambiaremos ni transferiremos su información personal a terceros
+            sin su consentimiento, salvo en los casos necesarios para cumplir con la ley o
+            responder a requerimientos legales, o cuando sea necesario para la prestación de
+            nuestros servicios (por ejemplo, con proveedores de hosting o herramientas de
+            marketing que operen bajo acuerdos de confidencialidad).
+        </p>
+        <p><strong>4. Uso de cookies</strong></p>
+        <p>
+            Nuestro sitio web puede utilizar cookies y tecnologías similares para recopilar
+            información sobre su interacción con nuestro sitio, con el fin de mejorar su
+            experiencia de navegación y ofrecer contenido relevante. Usted puede configurar
+            su navegador para rechazar las cookies, aunque ello podría afectar el correcto
+            funcionamiento de algunas secciones del sitio.
+        </p>
+        <p><strong>5. Seguridad</strong></p>
+        <p>
+            Implementamos medidas de seguridad técnicas y organizativas para proteger sus datos
+            personales contra el acceso no autorizado, la alteración, divulgación o destrucción
+            de la información que almacenamos. Sin embargo, ningún método de transmisión o
+            almacenamiento electrónico es completamente seguro, por lo que no podemos garantizar
+            la seguridad absoluta de sus datos.
+        </p>
+        <p><strong>6. Enlaces a sitios externos</strong></p>
+        <p>
+            Este sitio puede contener enlaces a sitios web de terceros que cuentan con sus
+            propias políticas de privacidad. No nos hacemos responsables de las prácticas o
+            el contenido de dichos sitios. Le recomendamos que revise la política de privacidad
+            de cada sitio que visite.
+        </p>
+        <p><strong>7. Cambios en esta política</strong></p>
+        <p>
+            Nos reservamos el derecho de modificar la presente Política de Privacidad en
+            cualquier momento. Los cambios serán efectivos en el momento de su publicación en
+            esta página. Le recomendamos que revise periódicamente esta sección para mantenerse
+            informado sobre cómo protegemos su información.
+        </p>
+        <p><strong>8. Contacto</strong></p>
+        <p>
+            Si tiene preguntas o inquietudes acerca de esta Política de Privacidad, o si desea
+            ejercer sus derechos de acceso, rectificación, cancelación u oposición, puede
+            contactarnos a través de la siguiente dirección de correo electrónico:
+            <strong>info@tusitio.com</strong>.
+        </p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* Estilos Generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,9 +7,10 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url('principal.jpg') no-repeat center center/cover;
+    background: url('../img/principal.jpg') no-repeat center center/cover;
 }
 
+/* Contenedor Principal */
 .login-container {
     display: flex;
     width: 80%;
@@ -20,34 +21,69 @@ body {
     overflow: hidden;
 }
 
-.login-left, .login-right {
+/* Secciones Izquierda y Derecha */
+.login-left,
+.login-right {
+    flex: 1;
     padding: 40px;
 }
 
+/* Sección Izquierda */
 .login-left {
-    flex: 1;
     background: rgba(0, 0, 0, 0.6);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
 }
 
-.login-left h1 {
-    font-size: 2.5em;
+/* Títulos */
+.login-left h1,
+.login-right h2 {
+    font-family: 'Tahoma', sans-serif;
+    font-size: 3em;
+    font-weight: bold;
     margin-bottom: 10px;
 }
 
+/* Tipografía para párrafos, labels y botones */
+.login-left p,
+.login-right label,
+.login-right button,
+.login-right p {
+    font-family: 'Palatino', serif;
+}
+
+/* Párrafos en la sección izquierda */
+.login-left p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Íconos Sociales */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 .social-icons a {
-    color: white;
-    margin: 10px;
-    font-size: 1.5em;
+    display: inline-flex;
+    align-items: center;
+    margin: 0 10px;
     text-decoration: none;
 }
 
+.social-icons img {
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+/* Sección Derecha */
 .login-right {
-    flex: 1;
     background: rgba(255, 255, 255, 0.1);
     display: flex;
     flex-direction: column;
@@ -55,16 +91,19 @@ body {
     align-items: center;
 }
 
-.login-right h2 {
-    font-size: 2em;
+.login-right a {
+    color: white;
+    text-decoration: underline;
 }
 
+/* Formulario */
 form {
     display: flex;
     flex-direction: column;
     width: 80%;
 }
 
+/* Labels e Inputs */
 label {
     margin-top: 10px;
     font-size: 1.1em;
@@ -78,27 +117,43 @@ input {
     border-radius: 5px;
 }
 
+/* Recordarme */
 .remember-me {
     display: flex;
     align-items: center;
     margin-top: 10px;
 }
 
+.remember-me input {
+    margin-right: 5px;
+    width: 15px;
+    height: 15px;
+    accent-color: white; /* En navegadores modernos */
+}
+
+.remember-me label {
+    margin: 0;
+    color: white;
+}
+
+/* Botón */
 button {
     margin-top: 20px;
-    padding: 10px;
+    padding: 12px;
     background: orange;
     border: none;
     color: white;
     font-size: 1.2em;
     cursor: pointer;
     border-radius: 5px;
+    width: 100%;
 }
 
 button:hover {
     background: darkorange;
 }
 
+/* Términos y Privacidad */
 .terms {
     font-size: 0.9em;
     margin-top: 10px;
@@ -107,4 +162,5 @@ button:hover {
 
 .terms a {
     color: white;
+    text-decoration: underline;
 }

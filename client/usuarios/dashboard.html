@@ -1,10 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <title>Voltio - Especialistas en cargar tu coche</title>
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="../assets/css/user.css" />
 </head>
 <body>
+<!-- Contenedor principal para el layout -->
+<div class="page-container">
 
+    <!-- HEADER -->
+    <header class="main-header">
+        <nav class="nav-container">
+            <!-- Menú centrado con anclas a secciones -->
+            <ul class="menu-center">
+                <!-- Al hacer clic en INICIO, vuelve al hero (id="inicio") -->
+                <li><a href="#inicio">INICIO</a></li>
+                <li><a href="#servicios">SERVICIOS</a></li>
+                <li><a href="#logros">LOGROS</a></li>
+                <li><a href="#nosotros">NOSOTROS</a></li>
+                <li><a href="#nosotros">CONTACTO</a></li>
+                <li><a href="#reservas">RESERVAS</a></li>
+            </ul>
+
+            <!-- Icono de usuario a la derecha -->
+            <div class="user-icon-area">
+                <!-- Ajusta la ruta a tu icono -->
+                <img src="assets/icons/userIcon.png" alt="Icono de usuario" id="userIcon" />
+            </div>
+        </nav>
+    </header>
+
+    <!-- Modal que aparece al hacer clic en el icono -->
+    <div class="modal" id="userModal">
+        <div class="modal-content">
+            <ul>
+                <li><a href="#">Configuración y privacidad</a></li>
+                <li><a href="#">Ayuda y asistencia</a></li>
+                <li><a href="#">Ubicación</a></li>
+                <li><a href="#">Cerrar sesión</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <!-- Sección HERO / INICIO -->
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <img src="../assets/icons/rayo.ico" alt="Logo Voltio" class="logo-voltio" />
+                <h1 class="brand-name">VOLTIO</h1>
+                <p>ESPECIALISTAS EN CARGAR TU COCHE</p>
+            </div>
+        </section>
+
+        <!-- Sección SERVICIOS -->
+        <section class="servicios-section" id="servicios">
+            <h2>SERVICIOS</h2>
+            <div class="services-container">
+                <!-- Ejemplo de tarjetas o bloques de servicios -->
+                <article>
+                    <h3>Reparaciones</h3>
+                    <p>Reparaciones generales, reparaciones especiales y partes antiguas.</p>
+                </article>
+                <article>
+                    <h3>Tapicería</h3>
+                    <p>Amplia variedad de telas, incluyendo cueros vintage y opciones de color.</p>
+                </article>
+                <article>
+                    <h3>Pintura</h3>
+                    <p>Pintura en aerosol, Stencilling personalizado y más.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sección LOGROS -->
+        <section class="logros-section" id="logros">
+            <h2>LOGROS</h2>
+            <p>Una colección de autos renovados con pasión.</p>
+            <!-- Aquí podrías poner imágenes o galería de logros -->
+        </section>
+
+        <!-- Sección NOSOTROS -->
+        <section class="nosotros-section" id="nosotros">
+            <h2>NOSOTROS</h2>
+            <p>
+                Este es un buen espacio para extenderte sobre tu compañía y servicios.
+                Explica quién eres, tu historia y lo que te diferencia de la competencia.
+            </p>
+        </section>
+
+        <!-- Sección RESERVAS (o Contacto) -->
+        <section class="reservas-section" id="reservas">
+            <h2>RESERVAS</h2>
+            <p>Puedes reservar tu cargador completando este formulario:</p>
+            <form>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" required />
+
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" required />
+
+                <label for="email">Email</label>
+                <input type="email" id="email" required />
+
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" rows="4"></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- FOOTER pegado al final -->
+    <footer class="main-footer">
+        <p>© 2025 - Voltio - Proyecto Encuentra tu Cargador</p>
+    </footer>
+
+</div> <!-- Fin page-container -->
 </body>
 </html>

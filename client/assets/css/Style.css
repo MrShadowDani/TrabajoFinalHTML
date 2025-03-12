@@ -9,7 +9,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    /* Ajusta la ruta de la imagen de fondo si difiere en tu proyecto */
     background: url('../img/principal.jpg') no-repeat center center/cover;
 }
 
@@ -56,27 +55,23 @@ body {
     font-family: 'Palatino', serif;
 }
 
-/* Íconos Sociales */
 .social-icons {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
-
 .social-icons a {
     display: inline-flex;
     align-items: center;
     margin: 0 10px;
     text-decoration: none;
 }
-
 .social-icons img {
     width: 25px;
     height: 25px;
     margin: 0 5px;
     cursor: pointer;
 }
-
 .login-left p {
     font-size: 1.2em;
     margin-bottom: 20px;
@@ -104,59 +99,35 @@ form {
     flex-direction: column;
     width: 80%;
 }
-
-/*
-   Espaciado uniforme para labels
-   (para que haya la misma distancia antes de cada input).
-*/
 form label {
     margin-top: 15px;
     margin-bottom: 5px;
     font-size: 1.1em;
 }
 
-/* ============================
-   INPUTS (Correo, Contraseña)
-============================ */
-/*
-   Unificamos el estilo de todos los inputs del form (email, password, etc.)
-   para que tengan mismo borde, color de fondo, y ancho.
-*/
+/* Inputs (email, password, etc.) */
 form input[type="email"],
 form input[type="password"],
 form input[type="text"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;   /* Borde gris */
+    border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #fff;   /* Fondo blanco */
-    color: #000;             /* Texto negro */
+    background-color: #fff;
+    color: #000;
     box-sizing: border-box;
-    margin-bottom: 10px;     /* Espacio inferior uniforme */
+    margin-bottom: 10px;
     outline: none;
 }
 
-/*
-   Contenedor de la contraseña + ícono ojo:
-   - position: relative para ubicar el botón con posición absoluta.
-*/
+/* Contenedor de la contraseña + ojo */
 .password-container {
     position: relative;
     width: 100%;
 }
-
-/*
-   Ajustamos el input de contraseña para dejar espacio al ícono a la derecha.
-   (el resto de estilos se hereda de la regla anterior).
-*/
-.password-container input[type="password"],
-.password-container input[type="text"] {
-    padding-right: 40px; /* Espacio para el ícono del ojo */
+.password-container input {
+    padding-right: 40px; /* Espacio para el ícono */
 }
-
-/* ============================
-   BOTÓN DEL OJO
-============================ */
 .toggle-password-btn {
     position: absolute;
     top: 50%;
@@ -170,37 +141,30 @@ form input[type="text"] {
     height: auto;
     line-height: 0;
 }
-
 .toggle-password-btn svg {
     width: 24px;
     height: 24px;
     display: block;
 }
 
-/* ============================
-   RECORDARME
-============================ */
+/* Recordarme */
 .remember-me {
     display: flex;
     align-items: center;
-    margin-bottom: 10px; /* Separación antes del botón de Iniciar Sesión */
+    margin-bottom: 10px;
 }
-
 .remember-me input {
     margin-right: 5px;
     width: 15px;
     height: 15px;
-    accent-color: white; /* En navegadores modernos */
+    accent-color: white;
 }
-
 .remember-me label {
     margin: 0;
     color: white;
 }
 
-/* ============================
-   BOTÓN DE INICIAR SESIÓN
-============================ */
+/* Botón Iniciar Sesión */
 .login-btn {
     padding: 12px;
     background: orange;
@@ -212,27 +176,29 @@ form input[type="text"] {
     width: 100%;
     margin-top: 10px;
 }
-
 .login-btn:hover {
     background: darkorange;
 }
 
-/* ============================
-   TÉRMINOS Y PRIVACIDAD
-============================ */
+/* Enlaces (¿Olvidaste tu contraseña? y Crear cuenta) */
+.login-right p a {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Términos */
 .terms {
     font-size: 0.9em;
     margin-top: 10px;
     text-align: center;
 }
-
 .terms a {
     color: white;
     text-decoration: underline;
 }
 
 /* ============================
-   MODALES (Ventanas Emergentes)
+   MODALES
 ============================ */
 .modal {
     display: none;
@@ -245,23 +211,16 @@ form input[type="text"] {
     overflow: auto; /* Scroll si contenido es largo */
     background-color: rgba(0, 0, 0, 0.5);
 }
-
-/*
-   Contenido del Modal:
-   - Fondo blanco, texto negro.
-*/
 .modal-content {
     background-color: #fff;
     color: #000;
     margin: 10% auto;
     padding: 20px;
-    width: 80%;
+    width: 70%;  /* Ajusta si quieres más ancho o menos */
     max-width: 400px;
     position: relative;
     border-radius: 5px;
 }
-
-/* Botón "X" para cerrar modal */
 .close-btn {
     position: absolute;
     top: 10px;
@@ -270,11 +229,6 @@ form input[type="text"] {
     cursor: pointer;
     color: #000;
 }
-
-/*
-   Label dentro del modal (ej: "Correo electrónico")
-   para que mantenga la misma estética de separación.
-*/
 .modal-label {
     display: block;
     margin-top: 15px;
@@ -282,11 +236,6 @@ form input[type="text"] {
     font-size: 1.1em;
     color: #000;
 }
-
-/*
-   Input en el modal (ej: #recoverEmail)
-   para que sea igual al del login: fondo blanco, borde gris, texto negro.
-*/
 .modal-content input[type="email"] {
     width: 100%;
     padding: 10px;
@@ -299,18 +248,15 @@ form input[type="text"] {
     outline: none;
 }
 
-/* Botones en la parte inferior del modal (Cancelar, Buscar)
-   Mismo estilo que el botón de "Iniciar Sesión", pero un poco más grande.
-*/
+/* Botones inferiores del modal (Cancelar, Buscar) */
 .modal-actions {
     display: flex;
     justify-content: flex-end;
     margin-top: 10px;
 }
-
 .modal-actions button {
     margin-left: 10px;
-    padding: 14px; /* Un poco más grande que 12px */
+    padding: 14px;
     background: orange;
     border: none;
     color: white;
@@ -318,33 +264,28 @@ form input[type="text"] {
     cursor: pointer;
     border-radius: 5px;
 }
-
 .modal-actions button:hover {
     background: darkorange;
 }
 
-/* Mensajes de recuperación (errores o confirmaciones) */
+/* Mensajes de error/éxito */
 .recover-message {
     margin-top: 10px;
     color: red;
 }
 
-/*
-   Forzamos Palatino en los modales de Términos y Privacidad,
-   si deseas mantener la coherencia tipográfica.
-*/
+/* Términos y Privacidad => tipografía Palatino */
 #termsModal .modal-content,
 #privacyModal .modal-content {
     font-family: 'Palatino', serif;
-    background-color: #fff; /* Fondo blanco también para Términos y Privacidad */
+    background-color: #fff;
     color: #000;
 }
 
-/* Modal de "Olvidaste tu contraseña" => Tahoma en h2, Palatino en el resto */
+/* Modal "Olvidaste tu contraseña" => Tahoma en h2 */
 #forgotPasswordModal .modal-content h2 {
     font-family: 'Tahoma', sans-serif;
 }
-
 #forgotPasswordModal .modal-content p,
 #forgotPasswordModal .modal-content label,
 #forgotPasswordModal .modal-content input,
@@ -352,5 +293,73 @@ form input[type="text"] {
     font-family: 'Palatino', serif;
 }
 
+/* ============================
+   MODAL CREAR CUENTA
+============================ */
+/* Centra todo el texto del modal */
+.create-account-modal {
+    text-align: center;
+}
 
+/* Formulario interno */
+#createAccountForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra todos los campos */
+    width: 100%;
+    max-width: 300px; /* Ajusta el ancho de los campos */
+    margin: 0 auto;   /* Centra el form dentro del modal */
+}
 
+/* Fila de cada campo (label + input/select) */
+.form-row {
+    width: 100%;
+    margin-bottom: 8px; /* Menos espacio entre campos */
+    text-align: left;   /* Label alineado a la izquierda */
+}
+.form-row label {
+    margin-bottom: 3px;
+    font-size: 1.1em;
+}
+.form-row input,
+.form-row select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 0;
+}
+
+/* Teléfono y prefijo => mismo ancho */
+.phone-container {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+}
+.phone-container select,
+.phone-container input {
+    flex: 1;  /* Mismo ancho */
+    box-sizing: border-box;
+}
+
+/* Botón "Registrarte" */
+.create-btn {
+    margin-top: 15px;
+    padding: 10px;
+    background: orange;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%; /* Ocupa todo el ancho */
+}
+.create-btn:hover {
+    background: darkorange;
+}
+
+/* Mensaje de error/éxito en #createMessage */
+#createMessage {
+    margin-top: 10px;
+    color: red;
+}

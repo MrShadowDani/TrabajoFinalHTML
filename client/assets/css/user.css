@@ -1,0 +1,106 @@
+/* 1) El cuerpo y todo el texto, salvo el nombre de la empresa, en Palatino */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Palatino', serif; /* Fuente general */
+}
+
+/* Contenedor que abarca toda la página, para que el footer se pegue al final */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ocupa la altura completa de la ventana */
+}
+
+/* HEADER más alto, con fondo oscuro */
+.main-header {
+    background: #333;
+    padding: 4px 0;
+}
+
+/* Barra de navegación */
+.nav-container {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto; /* Centra horizontalmente */
+}
+
+/* Menú centrado */
+.menu-center {
+    list-style: none;
+    display: flex;
+    flex: 1; /* Ocupa el espacio para empujar session-area a la derecha */
+    justify-content: center;
+    gap: 30px;
+}
+
+.menu-center li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.menu-center li a:hover {
+    text-decoration: underline;
+}
+
+/* Área de inicio de sesión a la derecha */
+.session-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.user-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.session-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+/* HERO a pantalla completa */
+.hero {
+    background: url('../img/fondo.jpg') no-repeat center center/cover;
+    /* Ocupa todo el espacio restante hasta el footer */
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenido centrado sobre la imagen, con transparencia */
+.hero-content {
+    text-align: center;
+    color: white;
+    background: none; /* Filtro oscuro transparente */
+    padding: 20px;
+}
+
+/* Logo de Voltio */
+.logo-voltio {
+    max-width: 150px;
+    display: block;
+    margin: 0 auto 10px; /* Centra y da margen inferior */
+}
+
+/* Nombre de la empresa en Tahoma */
+.brand-name {
+    font-family: Tahoma, sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* FOOTER al final */
+.main-footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1px 0;
+}

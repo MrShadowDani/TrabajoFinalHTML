@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Fondo Interactivo - Encuentra tu Cargador</title>
+    <style>
+        /* Quita márgenes y asegura que el canvas ocupe toda la pantalla */
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #fff; /* Puedes ajustar el color de fondo principal */
+        }
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Se coloca detrás de otros elementos de la página */
+        }
+    </style>
+</head>
+<body>
+<canvas id="bgCanvas"></canvas>
+<script>
+    const canvas = document.getElementById('bgCanvas');
+    const ctx = canvas.getContext('2d');
+    let particlesArray = [];
+    const numberOfParticles = 100;
+
+    // Ajusta el tamaño del canvas
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Clase para definir cada partícula
+    class Particle {
+        constructor(x, y, dx, dy, size) {
+            this.x = x;
+            this.y = y;
+            this.dx = dx;
+            this.dy = dy;
+            this.size = size;
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+            ctx.fillStyle = 'black';
+            ctx.fill();
+        }
+
+        update() {
+            // Rebotar en los bordes del canvas
+            if(this.x + this.size > canvas.width || this.x - this.size < 0) {
+                this.dx = -this.dx;
+            }
+            if(this.y + this.size > canvas.height || this.y - this.size < 0) {
+                this.dy = -this.dy;
+            }
+            this.x += this.dx;
+            this.y += this.dy;
+            this.draw();
+        }
+    }
+
+    // Crea las partículas
+    function init() {
+        particlesArray = [];
+        for(let i = 0; i < numberOfParticles; i++) {
+            let size = Math.random() * 2 + 1;
+            let x = Math.random() * (canvas.width - size * 2) + size;
+            let y = Math.random() * (canvas.height - size * 2) + size;
+            let dx = (Math.random() - 0.5) * 2;
+            let dy = (Math.random() - 0.5) * 2;
+            particlesArray.push(new Particle(x, y, dx, dy, size));
+        }
+    }
+
+    // Dibuja líneas entre partículas cercanas para simular corrientes eléctricas
+    function connectParticles() {
+        const maxDistance = 100;
+        for(let a = 0; a < particlesArray.length; a++){
+            for(let b = a; b < particlesArray.length; b++){
+                let dx = particlesArray[a].x - particlesArray[b].x;
+                let dy = particlesArray[a].y - particlesArray[b].y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                if(distance < maxDistance) {
+                    ctx.beginPath();
+                    ctx.strokeStyle = 'rgba(0,0,0,' + (1 - distance / maxDistance) + ')';
+                    ctx.lineWidth = 1;
+                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    // Configura la animación
+    function animate() {
+        requestAnimationFrame(animate);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particlesArray.forEach(particle => {
+            particle.update();
+        });
+        connectParticles();
+        interactWithMouse();
+    }
+
+    // Ajusta el canvas en caso de cambio de tamaño de la ventana
+    window.addEventListener('resize', function(){
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        init();
+    });
+
+    // Configuración de la interacción con el ratón
+    const mouse = {
+        x: undefined,
+        y: undefined,
+        radius: 100
+    };
+
+    window.addEventListener('mousemove', function(event) {
+        mouse.x = event.x;
+        mouse.y = event.y;
+    });
+
+    // Las partículas se verán atraídas levemente al movimiento del ratón
+    function interactWithMouse() {
+        particlesArray.forEach(particle => {
+            let dx = mouse.x - particle.x;
+            let dy = mouse.y - particle.y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+            if(distance < mouse.radius) {
+                let forceDirectionX = dx / distance;
+                let forceDirectionY = dy / distance;
+                let force = (mouse.radius - distance) / mouse.radius;
+                particle.x -= forceDirectionX * force * 2;
+                particle.y -= forceDirectionY * force * 2;
+            }
+        });
+    }
+
+    init();
+    animate();
+</script>
+</body>
+</html>

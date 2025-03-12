@@ -1,10 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <title>Voltio - Especialistas en cargar tu coche</title>
+    <!-- Enlaza tu CSS específico para usuarios -->
+    <link rel="stylesheet" href="../assets/css/user.css" />
+    <!-- Script para abrir/cerrar modal y cambiar aspecto, etc. -->
+    <script defer src="../assets/js/user.js"></script>
 </head>
 <body>
+<!-- CABECERA / NAVEGACIÓN -->
+<header>
+    <nav class="nav-container">
+        <!-- Botón a la IZQUIERDA para "Inicio de sesión" -->
+        <div class="left-nav">
+            <button id="sessionBtn">Inicio de sesión</button>
+        </div>
 
+        <!-- Menú CENTRAL (varía según el rol) -->
+        <ul class="center-nav">
+            <li><a href="#">INICIO</a></li>
+            <li><a href="#">EMPLAZAMIENTOS</a></li>
+            <li><a href="#">SOPORTE TÉCNICO</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- SECCIÓN PRINCIPAL con imagen de fondo y texto central -->
+<main>
+    <section class="hero">
+        <!-- Imagen de fondo controlada por CSS (hero) -->
+        <div class="hero-content">
+            <!-- Logo de la empresa, si lo deseas -->
+            <img src="../assets/icons/rayo.ico" alt="Logo de la empresa" class="logo-empresa" />
+            <h1>ESPECIALISTAS EN CARGAR TU COCHE</h1>
+        </div>
+    </section>
+
+    <!-- Aquí vendrían el resto de secciones de la página (contenido, etc.) -->
+    <section class="content-section">
+        <h2>Bienvenido a tu Dashboard de Usuario</h2>
+        <p>Aquí podrás ver tus reservas, localizar cargadores, etc.</p>
+        <!-- Más contenido... -->
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2025 - Voltio - Proyecto Encuentra tu Cargador</p>
+</footer>
+
+<!-- MODAL que aparece al pulsar "Inicio de sesión" -->
+<div class="modal" id="sessionModal">
+    <div class="modal-content">
+        <span class="close-btn" id="closeModal">&times;</span>
+        <ul>
+            <li><a href="#">Configuración y Privacidad</a></li>
+            <li><a href="#">Ayuda y Asistencia</a></li>
+            <li><a href="#" id="toggleTheme">Aspecto (Claro / Oscuro)</a></li>
+            <li><a href="#">Ubicación</a></li>
+            <li><a href="#">Cerrar Sesión</a></li>
+        </ul>
+    </div>
+</div>
 </body>
 </html>

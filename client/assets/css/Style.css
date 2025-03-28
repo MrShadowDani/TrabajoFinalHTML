@@ -1,17 +1,20 @@
-/* ============================
-   ESTILOS GENERALES
-============================ */
+/* ============================================
+   1. ESTILOS GENERALES DE PÁGINA
+============================================ */
 body {
+    /* Definimos la tipografía base y quitamos márgenes por defecto */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    /* Centra todo el contenido en pantalla */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    /* Imagen de fondo ajustada a la pantalla */
     background: url('../img/principal.jpg') no-repeat center center/cover;
 }
-
+/* Contenedor principal del layout (izq + der) */
 .login-container {
     display: flex;
     width: 80%;
@@ -21,16 +24,15 @@ body {
     border-radius: 10px;
     overflow: hidden;
 }
-
+/* Estructura de la parte izq y der del login */
 .login-left,
 .login-right {
     flex: 1;
     padding: 40px;
 }
-
-/* ============================
-   SECCIÓN IZQUIERDA
-============================ */
+/* ============================================
+   2. SECCIÓN IZQUIERDA ("login-left")
+============================================ */
 .login-left {
     background: rgba(0, 0, 0, 0.6);
     display: flex;
@@ -39,7 +41,7 @@ body {
     align-items: center;
     text-align: center;
 }
-
+/* Títulos grandes en la izquierda y derecha */
 .login-left h1,
 .login-right h2 {
     font-family: 'Tahoma', sans-serif;
@@ -47,14 +49,19 @@ body {
     font-weight: bold;
     margin-bottom: 10px;
 }
-
+/* Tipografía para párrafos y labels en la derecha */
 .login-left p,
 .login-right label,
 .login-right button,
 .login-right p {
     font-family: 'Palatino', serif;
 }
-
+/* Ajustes de texto en la sección izquierda */
+.login-left p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+/* Iconos sociales en la sección izquierda */
 .social-icons {
     display: flex;
     justify-content: center;
@@ -72,14 +79,9 @@ body {
     margin: 0 5px;
     cursor: pointer;
 }
-.login-left p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-/* ============================
-   SECCIÓN DERECHA
-============================ */
+/* ============================================
+   3. SECCIÓN DERECHA ("login-right")
+============================================ */
 .login-right {
     background: rgba(255, 255, 255, 0.1);
     display: flex;
@@ -87,47 +89,51 @@ body {
     justify-content: center;
     align-items: center;
 }
-
+/* Links en la parte derecha (ej. "Olvidaste tu contraseña?") */
 .login-right a {
     color: white;
     text-decoration: underline;
 }
-
-/* Formulario principal */
+/* ============================================
+   4. FORMULARIO PRINCIPAL DE LOGIN
+============================================ */
 form {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 80%; /* Ajusta el ancho del formulario */
 }
+/* Labels dentro del formulario (ej. "Correo Electrónico") */
 form label {
-    margin-top: 15px;
-    margin-bottom: 5px;
+    margin: 15px 0 5px;
     font-size: 1.1em;
 }
-
-/* Inputs (email, password, etc.) */
+/* Inputs generales (email, password, text) */
 form input[type="email"],
 form input[type="password"],
 form input[type="text"] {
     width: 100%;
     padding: 10px;
+    margin-bottom: 10px;
+    /* Borde y fondo */
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #fff;
     color: #000;
+    /* Asegura espacio y sin contornos extra */
     box-sizing: border-box;
-    margin-bottom: 10px;
     outline: none;
 }
-
-/* Contenedor de la contraseña + ojo */
+/* ============================================
+   5. CAMPOS DE CONTRASEÑA (con ojo para mostrar/ocultar)
+============================================ */
 .password-container {
     position: relative;
     width: 100%;
 }
 .password-container input {
-    padding-right: 40px; /* Espacio para el ícono */
+    padding-right: 40px; /* Deja hueco para el botón "ojo" */
 }
+/* Botón tipo "ojo" para mostrar/ocultar contraseña */
 .toggle-password-btn {
     position: absolute;
     top: 50%;
@@ -136,9 +142,6 @@ form input[type="text"] {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0;
-    width: auto;
-    height: auto;
     line-height: 0;
 }
 .toggle-password-btn svg {
@@ -146,8 +149,9 @@ form input[type="text"] {
     height: 24px;
     display: block;
 }
-
-/* Recordarme */
+/* ============================================
+   6. RECUÉRDAME (CHECKBOX)
+============================================ */
 .remember-me {
     display: flex;
     align-items: center;
@@ -157,16 +161,18 @@ form input[type="text"] {
     margin-right: 5px;
     width: 15px;
     height: 15px;
-    accent-color: white;
+    accent-color: white; /* Color del check en navegadores modernos */
 }
 .remember-me label {
     margin: 0;
     color: white;
 }
-
-/* Botón Iniciar Sesión */
+/* ============================================
+   7. BOTÓN INICIAR SESIÓN
+============================================ */
 .login-btn {
     padding: 12px;
+    margin-top: 10px;
     background: orange;
     border: none;
     color: white;
@@ -174,32 +180,36 @@ form input[type="text"] {
     cursor: pointer;
     border-radius: 5px;
     width: 100%;
-    margin-top: 10px;
 }
 .login-btn:hover {
     background: darkorange;
 }
-
-/* Enlaces (¿Olvidaste tu contraseña? y Crear cuenta) */
-.login-right p a {
-    color: white;
-    text-decoration: underline;
-}
-
-/* Términos */
-.terms {
-    font-size: 0.9em;
+/* ============================================
+   8. ENLACES FINALES (OLVIDASTE CONTRASEÑA / CREAR CUENTA)
+============================================ */
+.links-together {
     margin-top: 10px;
+    text-align: center;
+}
+.links-together a {
+    display: inline-block;
+    margin: 3px 0;
+}
+/* ============================================
+   9. TÉRMINOS DE SERVICIO Y PRIVACIDAD
+============================================ */
+.terms {
+    margin-top: 10px;
+    font-size: 0.9em;
     text-align: center;
 }
 .terms a {
     color: white;
     text-decoration: underline;
 }
-
-/* ============================
-   MODALES
-============================ */
+/* ============================================
+   10. MODALES (Pop-ups)
+============================================ */
 .modal {
     display: none;
     position: fixed;
@@ -208,19 +218,21 @@ form input[type="text"] {
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Scroll si contenido es largo */
+    overflow: auto;
     background-color: rgba(0, 0, 0, 0.5);
 }
+/* Contenido del modal (caja blanca) */
 .modal-content {
     background-color: #fff;
     color: #000;
     margin: 10% auto;
     padding: 20px;
-    width: 70%;  /* Ajusta si quieres más ancho o menos */
+    width: 70%;
     max-width: 400px;
     position: relative;
     border-radius: 5px;
 }
+/* Botón "X" de cerrar modal */
 .close-btn {
     position: absolute;
     top: 10px;
@@ -229,6 +241,7 @@ form input[type="text"] {
     cursor: pointer;
     color: #000;
 }
+/* Labels dentro del modal (ej. "Correo electrónico") */
 .modal-label {
     display: block;
     margin-top: 15px;
@@ -236,19 +249,19 @@ form input[type="text"] {
     font-size: 1.1em;
     color: #000;
 }
+/* Input especial para "modal-content" en la recuperación de contraseña */
 .modal-content input[type="email"] {
     width: 100%;
     padding: 10px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #fff;
     color: #000;
-    margin-bottom: 10px;
     box-sizing: border-box;
     outline: none;
 }
-
-/* Botones inferiores del modal (Cancelar, Buscar) */
+/* Contenedor de botones en los modales (ej. "Cancelar" / "Buscar") */
 .modal-actions {
     display: flex;
     justify-content: flex-end;
@@ -256,7 +269,7 @@ form input[type="text"] {
 }
 .modal-actions button {
     margin-left: 10px;
-    padding: 14px;
+    padding: 10px;
     background: orange;
     border: none;
     color: white;
@@ -267,82 +280,86 @@ form input[type="text"] {
 .modal-actions button:hover {
     background: darkorange;
 }
-
-/* Mensajes de error/éxito */
+/* Mensaje de error/éxito en modales (ej. "Correo enviado con éxito") */
 .recover-message {
     margin-top: 10px;
     color: red;
 }
-
-/* Términos y Privacidad => tipografía Palatino */
-#termsModal .modal-content,
-#privacyModal .modal-content {
-    font-family: 'Palatino', serif;
-    background-color: #fff;
-    color: #000;
-}
-
-/* Modal "Olvidaste tu contraseña" => Tahoma en h2 */
-#forgotPasswordModal .modal-content h2 {
+/* Títulos de los modales (h2), "Recupera tu cuenta" / "Crea una cuenta" */
+#forgotPasswordModal .modal-content h2,
+#createAccountModal .modal-content h2 {
     font-family: 'Tahoma', sans-serif;
+    font-size: 2em;
+    margin: 0 0 10px;
 }
-#forgotPasswordModal .modal-content p,
-#forgotPasswordModal .modal-content label,
-#forgotPasswordModal .modal-content input,
-#forgotPasswordModal .modal-content button {
-    font-family: 'Palatino', serif;
-}
-
-/* ============================
-   MODAL CREAR CUENTA
-============================ */
-/* Centra todo el texto del modal */
+/* ============================================
+   11. MODAL "CREAR CUENTA"
+============================================ */
+/* Contenedor específico del modal de crear cuenta */
 .create-account-modal {
     text-align: center;
 }
-
-/* Formulario interno */
+/* Form principal para la creación de cuenta */
 #createAccountForm {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra todos los campos */
+    align-items: center;
+    max-width: 280px; /* Controla el ancho máximo del formulario */
     width: 100%;
-    max-width: 300px; /* Ajusta el ancho de los campos */
-    margin: 0 auto;   /* Centra el form dentro del modal */
+    margin: 0 auto;
 }
-
-/* Fila de cada campo (label + input/select) */
+/* Cada fila dentro del formulario (label + input) */
 .form-row {
     width: 100%;
-    margin-bottom: 8px; /* Menos espacio entre campos */
-    text-align: left;   /* Label alineado a la izquierda */
+    margin-bottom: 8px;
+    text-align: left;
 }
-.form-row label {
-    margin-bottom: 3px;
-    font-size: 1.1em;
-}
+/* Inputs y selects en cada fila */
 .form-row input,
 .form-row select {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
+    margin-bottom: 0;
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin-bottom: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 16px;
+    line-height: 1.2;
 }
-
-/* Teléfono y prefijo => mismo ancho */
+/* Quitar apariencia nativa del input date en algunos navegadores */
+.form-row input[type="date"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100% !important;
+}
+/* Contenedor para el prefijo y el número de teléfono */
 .phone-container {
     display: flex;
-    gap: 5px;
+    align-items: baseline;
     width: 100%;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
 }
+/* Estilo del select e input del teléfono */
 .phone-container select,
 .phone-container input {
-    flex: 1;  /* Mismo ancho */
-    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.2;
+    padding: 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0;
 }
-
-/* Botón "Registrarte" */
+/* Anchos del prefijo vs número */
+.phone-container select {
+    width: 50%; /* Ajusta según tu preferencia */
+}
+.phone-container input {
+    width: 50%;
+}
+/* Botón "Registrarte" en el formulario de crear cuenta */
 .create-btn {
     margin-top: 15px;
     padding: 10px;
@@ -352,13 +369,12 @@ form input[type="text"] {
     font-size: 1rem;
     cursor: pointer;
     border-radius: 5px;
-    width: 100%; /* Ocupa todo el ancho */
+    width: 100%;
 }
 .create-btn:hover {
     background: darkorange;
 }
-
-/* Mensaje de error/éxito en #createMessage */
+/* Mensaje de error o éxito en el modal de crear cuenta */
 #createMessage {
     margin-top: 10px;
     color: red;

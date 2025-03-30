@@ -2,122 +2,143 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
-    <title>Voltio - Especialistas en cargar tu coche</title>
-    <!-- Hoja de estilos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voltio - Usuario</title>
+    <!-- Google Fonts: Bebas Neue -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+
     <link rel="stylesheet" href="../assets/css/user.css" />
+    <link rel="icon" href="../assets/icons/rayo.ico" />
 </head>
 <body>
-<!-- Contenedor principal para el layout -->
-<div class="page-container">
 
-    <!-- HEADER -->
-    <header class="main-header">
-        <nav class="nav-container">
-            <!-- Menú centrado con anclas a secciones -->
-            <ul class="menu-center">
-                <!-- Al hacer clic en INICIO, vuelve al hero (id="inicio") -->
-                <li><a href="#inicio">INICIO</a></li>
-                <li><a href="#servicios">SERVICIOS</a></li>
-                <li><a href="#logros">LOGROS</a></li>
-                <li><a href="#nosotros">NOSOTROS</a></li>
-                <li><a href="#nosotros">CONTACTO</a></li>
-                <li><a href="#reservas">RESERVAS</a></li>
-            </ul>
-
-            <!-- Icono de usuario a la derecha -->
-            <div class="user-icon-area">
-                <!-- Ajusta la ruta a tu icono -->
-                <img src="assets/icons/userIcon.png" alt="Icono de usuario" id="userIcon" />
-            </div>
-        </nav>
-    </header>
-
-    <!-- Modal que aparece al hacer clic en el icono -->
-    <div class="modal" id="userModal">
-        <div class="modal-content">
-            <ul>
-                <li><a href="#">Configuración y privacidad</a></li>
-                <li><a href="#">Ayuda y asistencia</a></li>
-                <li><a href="#">Ubicación</a></li>
-                <li><a href="#">Cerrar sesión</a></li>
-            </ul>
+<!-- HEADER -->
+<header>
+    <img src="../assets/icons/rayo.ico" alt="Logo" class="logo-icon" />
+    <nav class="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#logros">Logros</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#reservar">Reservar Online</a>
+    </nav>
+    <div class="user-menu">
+        <img src="../assets/icons/userIcon.ico" alt="Usuario" id="userIcon" />
+        <div class="dropdown" id="dropdownMenu">
+            <a href="#">Configuración y privacidad</a>
+            <a href="#">Ayuda y asistencia</a>
+            <a href="#">Cerrar sesión</a>
         </div>
     </div>
+</header>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <main>
-        <!-- Sección HERO / INICIO -->
-        <section class="hero" id="inicio">
-            <div class="hero-content">
-                <img src="../assets/icons/rayo.ico" alt="Logo Voltio" class="logo-voltio" />
-                <h1 class="brand-name">VOLTIO</h1>
-                <p>ESPECIALISTAS EN CARGAR TU COCHE</p>
-            </div>
-        </section>
+<!-- INICIO: Grupo centrado en la sección (Primera imagen, perfecto) -->
+<section id="inicio" class="hero" style="background-image: url('../assets/img/naturaleza.jpg');">
+    <div class="hero-content">
+        <img src="../assets/icons/rayo.ico" alt="Logo Principal" class="main-logo" />
+        <h1 class="titulo-voltio">Voltio</h1>
+        <p>Especialistas en cargar tu coche</p>
+    </div>
+</section>
 
-        <!-- Sección SERVICIOS -->
-        <section class="servicios-section" id="servicios">
-            <h2>SERVICIOS</h2>
-            <div class="services-container">
-                <!-- Ejemplo de tarjetas o bloques de servicios -->
-                <article>
-                    <h3>Reparaciones</h3>
-                    <p>Reparaciones generales, reparaciones especiales y partes antiguas.</p>
-                </article>
-                <article>
-                    <h3>Tapicería</h3>
-                    <p>Amplia variedad de telas, incluyendo cueros vintage y opciones de color.</p>
-                </article>
-                <article>
-                    <h3>Pintura</h3>
-                    <p>Pintura en aerosol, Stencilling personalizado y más.</p>
-                </article>
-            </div>
-        </section>
+<!-- SERVICIOS: Sección con título y servicios centrados en la página (Segunda imagen) -->
+<section id="servicios" class="seccion" style="background-image: url('../assets/img/servicios.jpg');">
+    <h2>Servicios</h2>
+    <div class="servicios-grid">
+        <div class="servicio">
+            <img src="../assets/icons/instalacion.ico" alt="Instalación" />
+            <p>Instalaciones residenciales, comunitarias y corporativas &amp; soluciones adaptadas a todo tipo de vehículo eléctrico</p>
+        </div>
+        <div class="servicio">
+            <img src="../assets/icons/gestiondecarga.ico" alt="Gestión" />
+            <p>Sistemas inteligentes, control remoto, balanceo de carga &amp; programación en horarios valle</p>
+        </div>
+        <div class="servicio">
+            <img src="../assets/icons/tecnologiaysoporte.ico" alt="Soporte" />
+            <p>App personalizada, asistencia técnica 24/7 &amp; mantenimiento preventivo y correctivo</p>
+        </div>
+    </div>
+</section>
 
-        <!-- Sección LOGROS -->
-        <section class="logros-section" id="logros">
-            <h2>LOGROS</h2>
-            <p>Una colección de autos renovados con pasión.</p>
-            <!-- Aquí podrías poner imágenes o galería de logros -->
-        </section>
+<!-- LOGROS: Título y subtítulo ubicados arriba en el centro; imágenes agrupadas (Tercera imagen) -->
+<section id="logros" class="seccion logros">
+    <h2>Logros</h2>
+    <p class="subtitulo-logros">Logros conseguidos hasta el día de hoy</p>
+    <div class="galeria">
+        <div class="logro">
+            <img src="../assets/img/energiasrenovables.jpg" alt="Energías Renovables">
+            <div class="overlay">Utilizamos energías renovables</div>
+        </div>
+        <div class="logro">
+            <img src="../assets/img/nocontaminacion.jpg" alt="Sin Contaminación">
+            <div class="overlay">0 emisiones</div>
+        </div>
+        <div class="logro">
+            <img src="../assets/img/cocheelectrico.jpg" alt="Coche Eléctrico">
+            <div class="overlay">Cargamos todo tipo de coche</div>
+        </div>
+        <div class="logro">
+            <img src="../assets/img/geolocalizacion.jpg" alt="Geolocalización">
+            <div class="overlay">Electrolineras a tu alcance</div>
+        </div>
+        <div class="logro">
+            <img src="../assets/img/reservado.jpg" alt="Reservado">
+            <div class="overlay">Gestión y eficacia</div>
+        </div>
+        <div class="logro">
+            <img src="../assets/img/barato.jpg" alt="Accesible">
+            <div class="overlay">Al alcance de todos</div>
+        </div>
+    </div>
+</section>
 
-        <!-- Sección NOSOTROS -->
-        <section class="nosotros-section" id="nosotros">
-            <h2>NOSOTROS</h2>
-            <p>
-                Este es un buen espacio para extenderte sobre tu compañía y servicios.
-                Explica quién eres, tu historia y lo que te diferencia de la competencia.
-            </p>
-        </section>
+<!-- NOSOTROS: Contenido ubicado arriba en el centro (Cuarta imagen) -->
+<section id="nosotros" class="seccion" style="background-image: url('../assets/img/periodico.jpg');">
+    <div class="nosotros-contenido">
+        <h2>Nosotros</h2>
+        <p>
+            Somos una empresa dedicada a la movilidad eléctrica. Nuestro objetivo es acercar la carga a cada rincón de la ciudad con soluciones sostenibles, accesibles y modernas. Trabajamos con pasión, tecnología y un fuerte compromiso ecológico para transformar la manera en la que te mueves. Con una amplia experiencia en el sector, personal altamente cualificado y una app propia, garantizamos un servicio eficiente, amigable y siempre disponible.
+        </p>
+        <!-- Para modificar la altura y anchura del cuadro blanco, revisa las propiedades de .nosotros-contenido en el CSS -->
+    </div>
+</section>
 
-        <!-- Sección RESERVAS (o Contacto) -->
-        <section class="reservas-section" id="reservas">
-            <h2>RESERVAS</h2>
-            <p>Puedes reservar tu cargador completando este formulario:</p>
-            <form>
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" required />
+<!-- CONTACTO -->
+<section id="contacto" class="seccion" style="background-image: url('../assets/img/mapa.jpg');">
+    <div class="contacto-container">
+        <div class="info-contacto">
+            <h2>Encuentranos</h2>
+            <p>C. de Arapiles, 13, Chamberí, 28015 Madrid</p>
+            <p>info@Voltio.com</p>
+            <p>Tel: 918 10 92 00</p>
+            <p>Horario:</p>
+            <p>Lun–Vie: 7am – 10pm<br>Sábado: 8am – 10pm<br>Domingo: 8am – 11pm</p>
+        </div>
+        <form class="formulario">
+            <input type="text" placeholder="Nombre" />
+            <input type="text" placeholder="Apellido" />
+            <input type="email" placeholder="Email" required />
+            <textarea placeholder="Mensaje"></textarea>
+            <textarea placeholder="Asunto"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</section>
 
-                <label for="apellido">Apellido</label>
-                <input type="text" id="apellido" required />
+<!-- RESERVAR -->
+<section id="reservar" class="seccion" style="background-image: url('../assets/img/servicios.jpg');">
+    <div class="reservar-container">
+        <div class="reservar-form">
+            <p>[Formulario de Reserva]</p>
+        </div>
+        <div class="reservar-mapa">
+            <p>[Aquí se insertará el mapa con la API]</p>
+        </div>
+    </div>
+</section>
 
-                <label for="email">Email</label>
-                <input type="email" id="email" required />
-
-                <label for="mensaje">Mensaje</label>
-                <textarea id="mensaje" rows="4"></textarea>
-
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
-    </main>
-
-    <!-- FOOTER pegado al final -->
-    <footer class="main-footer">
-        <p>© 2025 - Voltio - Proyecto Encuentra tu Cargador</p>
-    </footer>
-
-</div> <!-- Fin page-container -->
+<script src="../assets/js/user.js"></script>
 </body>
 </html>

@@ -1,170 +1,270 @@
-/* Reseteo básico */
-* {
+/* FUENTES:
+   - Los títulos (Voltio, Servicios, Logros, Nosotros, Encuentranos) se muestran en Tahoma.
+   - El resto del texto se muestra en Palatino.
+*/
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: 'Palatino Linotype', Palatino, serif;
 }
 
-/* Para desplazamiento suave al hacer clic en anclas */
-html {
-    scroll-behavior: smooth;
+h1, h2, h3, h4, h5, h6 {
+    font-family: Bebas Neue, sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-/* Mantenemos la estructura actual: .page-container, .hero, etc. */
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Palatino', serif;
-}
-
-.page-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.main-header {
-    background: #333;
-    padding: 20px 0;
-}
-
-/* ... El resto de tu CSS (nav-container, .hero, .hero-content, etc.) */
-
-/* Footer siempre abajo */
-.main-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: auto; /* Si la página es corta, lo empuja al final */
-}
-
-/* Ejemplo de estilos para las secciones de contenido */
-.servicios-section,
-.logros-section,
-.nosotros-section,
-.reservas-section {
-    padding: 40px 20px;
-    background: #f0f0f0; /* Cambia a tu gusto */
-    min-height: 400px;   /* Para dar altura y ver el scroll */
-    /* Podrías alternar colores o fondos en cada sección */
-}
-
-/* Ejemplo: contenedor de servicios */
-.services-container {
-    display: flex;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-/* Artículos de ejemplo */
-.services-container article {
-    flex: 1;
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-/* Formulario de reservas */
-.reservas-section form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-}
-
-.reservas-section form label {
-    margin-top: 10px;
-}
-
-.reservas-section form input,
-.reservas-section form textarea {
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
-
-.reservas-section form button {
-    margin-top: 15px;
-    padding: 10px;
-    background: orange;
-    border: none;
+/* HEADER */
+header {
+    background: #222;
     color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-}
-/* Barra de navegación */
-.navbar {
     display: flex;
     align-items: center;
-    justify-content: center; /* Para centrar los enlaces en el medio */
-    background-color: #333;  /* Color de fondo */
+    justify-content: space-between;
     padding: 10px 20px;
-    position: relative;      /* Para posicionar el modal relativo a la navbar */
 }
 
-/* Lista de enlaces en horizontal */
-.nav-links {
-    list-style: none;
-    display: flex;          /* Uso de flexbox para alinear en horizontal */
-    gap: 20px;              /* Espacio entre cada enlace */
-    flex: 1;                /* Ocupa todo el espacio posible */
-    justify-content: center;/* Centra los links horizontalmente */
+.logo-icon {
+    width: 32px;
+    height: 32px;
 }
 
-/* Estilo de los enlaces */
-.nav-links li a {
-    text-decoration: none;
+.menu a {
     color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.user-menu {
+    position: relative;
+}
+
+.user-menu img {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    top: 40px;
+    width: 200px;
+    z-index: 10;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown.show {
+    display: block;
+}
+
+/* INICIO */
+.hero {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;     /* Centrado vertical */
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.main-logo {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.titulo-voltio {
+    font-size: 4rem;
+    margin: 0;
+}
+
+/* Sección general */
+.seccion {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    /* Por defecto centrado; se modifican algunas secciones abajo */
+    justify-content: center;
+    align-items: center;
+}
+
+.seccion h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    position: relative;
+    text-align: center;
+}
+
+.seccion h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: white;
+    margin: 10px auto 30px;
+}
+
+/* SERVICIOS */
+#servicios .servicios-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.servicio {
+    width: 250px;
+    text-align: center;
+}
+
+.servicio img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+/* LOGROS - Ubicar contenido en la parte superior */
+#logros {
+    justify-content: flex-start;  /* Alinea el contenido al inicio (arriba) */
+    align-items: center;
+    padding-top: 40px;            /* Espacio desde la parte superior */
+}
+
+.logros {
+    background: #fff;
+    color: black;
+}
+
+.subtitulo-logros {
+    text-align: center;
+    margin-bottom: 20px;
     font-size: 1rem;
 }
 
-/* Área del icono de usuario (a la derecha) */
-.user-icon-area {
-    margin-left: auto;      /* Empuja el icono a la derecha */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px; /* Menor separación entre imágenes */
+    justify-items: center;
 }
 
-#userIcon {
-    width: 32px;
-    height: 32px;
-    cursor: pointer;        /* Manito al pasar sobre el icono */
+.logro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 280px;
 }
 
-/* --- MODAL --- */
-.modal {
-    display: none;          /* Oculto por defecto */
-    position: absolute;     /* Posición absoluta relativo a la navbar (por 'position: relative' en .navbar) */
-    top: 60px;              /* Ajusta para ubicar debajo de la barra */
-    right: 20px;            /* Pegado a la derecha */
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    z-index: 999;
+.logro img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
 }
 
-/* Contenedor del contenido del modal */
-.modal-content {
-    padding: 10px 20px;
+.logro .overlay {
+    background: transparent;
+    color: black;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
-/* Lista del modal */
-.modal-content ul {
-    list-style: none;
+/* NOSOTROS - Ubicar contenido arriba en el centro */
+#nosotros {
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 40px;
 }
 
-.modal-content ul li {
-    margin: 10px 0;
+.nosotros-contenido {
+    background: white;
+    color: black;
+    padding: 30px;
+    max-width: 800px; /* Puedes modificar este valor para cambiar el ancho */
+    width: 100%;
+    height: auto;     /* Si deseas una altura fija, reemplaza "auto" por un valor (ej.: 400px) */
+    margin: auto;
+    border-radius: 10px;
+    text-align: center;
 }
 
-.modal-content ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 0.95rem;
+/* ENCUENTRANOS - Cuadro blanco transparente con ajustes */
+#encuentranos {
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 40px;
 }
 
-/* Si quieres hover en los links del modal */
-.modal-content ul li a:hover {
-    text-decoration: underline;
+.encuentranos-contenido {
+    background: rgba(255, 255, 255, 0.8); /* Transparencia: cambia el valor alfa si deseas más o menos transparencia */
+    color: black;
+    padding: 30px 20px; /* Ajusta el padding vertical para alargar o acortar la altura */
+    max-width: 700px;   /* Ajusta este valor para cambiar el ancho del cuadro */
+    width: 100%;
+    margin: auto;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* CONTACTO */
+.contacto-container {
+    max-width: 1000px;
+    margin: auto;
+    background: white;
+    color: black;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contacto-container h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.info-contacto, .formulario {
+    flex: 1;
+    min-width: 300px;
+    margin: 10px;
+}
+
+/* RESERVAR */
+.reservar-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+    gap: 20px;
+}
+
+.reservar-form, .reservar-mapa {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
 }

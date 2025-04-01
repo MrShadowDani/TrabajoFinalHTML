@@ -1,10 +1,15 @@
 /* FUENTES:
-   - Los títulos (Voltio, Servicios, Logros, Nosotros, Encuentranos) se muestran en Tahoma.
+   - Los títulos se muestran en Bebas Neue (puedes cambiarlo a Tahoma si lo prefieres).
    - El resto del texto se muestra en Palatino.
 */
 body {
     margin: 0;
     font-family: 'Palatino Linotype', Palatino, serif;
+}
+
+/* Para que todos los elementos hereden la fuente del body, a menos que se especifique lo contrario */
+* {
+    font-family: inherit;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -76,8 +81,8 @@ header {
     color: white;
     min-height: 100vh;
     display: flex;
-    justify-content: center; /* Centrado horizontal */
-    align-items: center;     /* Centrado vertical */
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-content {
@@ -94,7 +99,7 @@ header {
     margin: 0;
 }
 
-/* Sección general */
+/* Sección general (centrado en vertical y horizontal) */
 .seccion {
     min-height: 100vh;
     background-size: cover;
@@ -103,7 +108,14 @@ header {
     padding: 40px 20px;
     display: flex;
     flex-direction: column;
-    /* Por defecto centrado; se modifican algunas secciones abajo */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Si algún contenedor específico (como #nosotros) tenía ajustes distintos, los unifico para centrar el contenido */
+#nosotros {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -115,13 +127,19 @@ header {
     text-align: center;
 }
 
+/* Línea de separación en h2: por defecto negra para todas las secciones */
 .seccion h2::after {
     content: "";
     display: block;
     width: 60px;
     height: 3px;
-    background-color: white;
+    background-color: black;
     margin: 10px auto 30px;
+}
+
+/* Sección de Servicios: sobreescribe para línea blanca */
+#servicios h2::after {
+    background-color: white;
 }
 
 /* SERVICIOS */
@@ -144,11 +162,11 @@ header {
     margin-bottom: 10px;
 }
 
-/* LOGROS - Ubicar contenido en la parte superior */
-#logros {
-    justify-content: flex-start;  /* Alinea el contenido al inicio (arriba) */
+/* LOGROS */
+#logros .logros-grid {
+    justify-content: center;
     align-items: center;
-    padding-top: 40px;            /* Espacio desde la parte superior */
+    padding-top: 40px;
 }
 
 .logros {
@@ -165,7 +183,7 @@ header {
 .galeria {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px; /* Menor separación entre imágenes */
+    gap: 10px;
     justify-items: center;
 }
 
@@ -189,82 +207,184 @@ header {
     font-weight: bold;
 }
 
-/* NOSOTROS - Ubicar contenido arriba en el centro */
-#nosotros {
-    justify-content: flex-start;
-    align-items: center;
-    padding-top: 40px;
-}
-
+/* NOSOTROS */
 .nosotros-contenido {
     background: white;
     color: black;
     padding: 30px;
-    max-width: 800px; /* Puedes modificar este valor para cambiar el ancho */
+    max-width: 600px;
     width: 100%;
-    height: auto;     /* Si deseas una altura fija, reemplaza "auto" por un valor (ej.: 400px) */
-    margin: auto;
-    border-radius: 10px;
-    text-align: center;
-}
-
-/* ENCUENTRANOS - Cuadro blanco transparente con ajustes */
-#encuentranos {
-    justify-content: flex-start;
-    align-items: center;
-    padding-top: 40px;
-}
-
-.encuentranos-contenido {
-    background: rgba(255, 255, 255, 0.8); /* Transparencia: cambia el valor alfa si deseas más o menos transparencia */
-    color: black;
-    padding: 30px 20px; /* Ajusta el padding vertical para alargar o acortar la altura */
-    max-width: 700px;   /* Ajusta este valor para cambiar el ancho del cuadro */
-    width: 100%;
+    height: auto;
     margin: auto;
     border-radius: 10px;
     text-align: center;
 }
 
 /* CONTACTO */
+.contacto-seccion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
 .contacto-container {
-    max-width: 1000px;
-    margin: auto;
-    background: white;
-    color: black;
+    max-width: 600px;
+    width: 100%;
+    background: #fff;
+    color: #333;
     padding: 30px;
     border-radius: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    margin: 20px auto;
 }
 
 .contacto-container h2 {
-    text-align: center;
     width: 100%;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.info-contacto {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+    text-align: left;
     margin-bottom: 20px;
 }
 
-.info-contacto, .formulario {
-    flex: 1;
-    min-width: 300px;
-    margin: 10px;
+.formulario {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+    text-align: left;
+}
+
+.formulario label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.formulario input,
+.formulario textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font: inherit;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.formulario button {
+    display: block;
+    margin: 10px auto 0;
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formulario button:hover {
+    background: #555;
 }
 
 /* RESERVAR */
+/* Reservar section */
 .reservar-container {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
-    padding: 40px 20px;
     gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-.reservar-form, .reservar-mapa {
-    flex: 1;
-    min-width: 300px;
-    background: rgba(255, 255, 255, 0.1);
+.reservar-form {
+    background: #fff;
+    color: #333;
     padding: 20px;
     border-radius: 8px;
-    color: white;
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
 }
+
+.reservar-mapa {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff;
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Secciones dentro del formulario */
+.form-section {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Inputs y select */
+select,
+input[type="number"],
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Contenedor para tiempo de uso */
+.tiempo-container {
+    display: flex;
+    gap: 10px;
+}
+
+.tiempo-input {
+    flex: 1;
+}
+
+/* Precio total */
+.precio-total {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+/* Opciones de método de pago */
+.pago-options {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Botón de reserva centrado */
+.boton-reserva {
+    text-align: center;
+}
+
+.boton-reserva button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.boton-reserva button:hover {
+    background: #555;
+}
+

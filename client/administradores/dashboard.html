@@ -2,66 +2,56 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
-    <title>Voltio - Especialistas en cargar tu coche</title>
-    <!-- Enlaza tu CSS específico para usuarios -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voltio - Administrador</title>
+    <!-- Google Fonts: Bebas Neue -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+
     <link rel="stylesheet" href="../assets/css/user.css" />
-    <!-- Script para abrir/cerrar modal y cambiar aspecto, etc. -->
-    <script defer src="../assets/js/user.js"></script>
+    <link rel="icon" href="../assets/icons/rayo.ico" />
 </head>
 <body>
-<!-- CABECERA / NAVEGACIÓN -->
-<header>
-    <nav class="nav-container">
-        <!-- Botón a la IZQUIERDA para "Inicio de sesión" -->
-        <div class="left-nav">
-            <button id="sessionBtn">Inicio de sesión</button>
-        </div>
 
-        <!-- Menú CENTRAL (varía según el rol) -->
-        <ul class="center-nav">
-            <li><a href="#">INICIO</a></li>
-            <li><a href="#">LOCALIZACIONES</a></li>
-            <li><a href="#">ESTADÍSTICAS</a></li>
-        </ul>
+<!-- HEADER -->
+<header>
+    <img src="../assets/icons/rayo.ico" alt="Logo" class="logo-icon" />
+    <nav class="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#localizaciones">Localizaciones</a>
+        <a href="#estadisticas">Estadísticas</a>
     </nav>
+    <div class="user-menu">
+        <img src="../assets/icons/userIcon.ico" alt="Usuario" id="userIcon" />
+        <div class="dropdown" id="dropdownMenu">
+            <a href="#">Configuración y privacidad</a>
+            <a href="#">Ayuda y asistencia</a>
+            <a href="#">Cerrar sesión</a>
+        </div>
+    </div>
 </header>
 
-<!-- SECCIÓN PRINCIPAL con imagen de fondo y texto central -->
-<main>
-    <section class="hero">
-        <!-- Imagen de fondo controlada por CSS (hero) -->
-        <div class="hero-content">
-            <!-- Logo de la empresa, si lo deseas -->
-            <img src="../assets/icons/rayo.ico" alt="Logo de la empresa" class="logo-empresa" />
-            <h1>ESPECIALISTAS EN CARGAR TU COCHE</h1>
-        </div>
-    </section>
-
-    <!-- Aquí vendrían el resto de secciones de la página (contenido, etc.) -->
-    <section class="content-section">
-        <h2>Bienvenido a tu Dashboard de Usuario</h2>
-        <p>Aquí podrás ver tus reservas, localizar cargadores, etc.</p>
-        <!-- Más contenido... -->
-    </section>
-</main>
-
-<!-- FOOTER -->
-<footer>
-    <p>© 2025 - Voltio - Proyecto Encuentra tu Cargador</p>
-</footer>
-
-<!-- MODAL que aparece al pulsar "Inicio de sesión" -->
-<div class="modal" id="sessionModal">
-    <div class="modal-content">
-        <span class="close-btn" id="closeModal">&times;</span>
-        <ul>
-            <li><a href="#">Configuración y Privacidad</a></li>
-            <li><a href="#">Ayuda y Asistencia</a></li>
-            <li><a href="#" id="toggleTheme">Aspecto (Claro / Oscuro)</a></li>
-            <li><a href="#">Ubicación</a></li>
-            <li><a href="#">Cerrar Sesión</a></li>
-        </ul>
+<!-- INICIO: Mismo diseño que la página de usuarios -->
+<section id="inicio" class="hero" style="background-image: url('../assets/img/naturaleza.jpg');">
+    <div class="hero-content">
+        <img src="../assets/icons/rayo.ico" alt="Logo Principal" class="main-logo" />
+        <h1 class="titulo-voltio">Voltio</h1>
+        <p>Especialistas en cargar tu coche</p>
     </div>
-</div>
+</section>
+
+<!-- LOCALIZACIONES: Sección placeholder -->
+<section id="localizaciones" class="seccion" style="background-image: url('../assets/img/servicios.jpg');">
+    <h2>Localizaciones</h2>
+    <p>Contenido en desarrollo...</p>
+</section>
+
+<!-- ESTADÍSTICAS: Sección placeholder -->
+<section id="estadisticas" class="seccion" style="background-image: url('../assets/img/servicios.jpg');">
+    <h2>Estadísticas</h2>
+    <p>Contenido en desarrollo...</p>
+</section>
+
+<script src="../assets/js/user.js"></script>
 </body>
 </html>

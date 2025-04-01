@@ -106,38 +106,121 @@
 </section>
 
 <!-- CONTACTO -->
-<section id="contacto" class="seccion" style="background-image: url('../assets/img/mapa.jpg');">
+<section id="contacto" class="seccion contacto-seccion" style="background-image: url('../assets/img/mapa.jpg');">
     <div class="contacto-container">
+        <!-- Título centrado -->
+        <h2>Encuéntranos</h2>
+
+        <!-- Información de contacto a la izquierda -->
         <div class="info-contacto">
-            <h2>Encuentranos</h2>
-            <p>C. de Arapiles, 13, Chamberí, 28015 Madrid</p>
+            <p>C. de Arapiles, 13<br>28015 Madrid</p>
             <p>info@Voltio.com</p>
-            <p>Tel: 918 10 92 00</p>
-            <p>Horario:</p>
-            <p>Lun–Vie: 7am – 10pm<br>Sábado: 8am – 10pm<br>Domingo: 8am – 11pm</p>
+            <p>Tel: +34 918 109 200</p>
+            <p><strong>Horario:</strong></p>
+            <p>
+                Lun–Vie: 7am – 10pm<br>
+                Sábado: 8am – 10pm<br>
+                Domingo: 8am – 11pm
+            </p>
         </div>
+
+        <!-- Formulario a la derecha -->
         <form class="formulario">
-            <input type="text" placeholder="Nombre" />
-            <input type="text" placeholder="Apellido" />
-            <input type="email" placeholder="Email" required />
-            <textarea placeholder="Mensaje"></textarea>
-            <textarea placeholder="Asunto"></textarea>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" placeholder="Nombre" required />
+
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" placeholder="Apellido" required />
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Email" required />
+
+            <label for="asunto">Asunto</label>
+            <input type="text" id="asunto" placeholder="Asunto" />
+
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" placeholder="Mensaje" required></textarea>
+
             <button type="submit">Enviar</button>
         </form>
+
     </div>
 </section>
+
 
 <!-- RESERVAR -->
 <section id="reservar" class="seccion" style="background-image: url('../assets/img/servicios.jpg');">
     <div class="reservar-container">
+        <!-- Contenedor del formulario de reserva (fondo blanco) -->
         <div class="reservar-form">
-            <p>[Formulario de Reserva]</p>
+            <form id="reservaForm">
+                <!-- Tipo de cargador (desplegable) -->
+                <div class="form-section">
+                    <label for="tipoCargador" class="form-label">Tipo de cargador</label>
+                    <select id="tipoCargador" name="tipoCargador">
+                        <option value="" disabled selected>Selecciona un tipo de cargador</option>
+                        <option value="rapido" data-precio="25">Rápido (25€/h)</option>
+                        <option value="estandar" data-precio="15">Estándar (15€/h)</option>
+                        <option value="compatible" data-precio="20">Compatible (20€/h)</option>
+                    </select>
+                </div>
+
+                <!-- Tiempo de uso (horas y minutos) -->
+                <div class="form-section">
+                    <label class="form-label">Tiempo de uso</label>
+                    <div class="tiempo-container">
+                        <div class="tiempo-input">
+                            <label for="horas">Horas</label>
+                            <input type="number" id="horas" name="horas" min="0" value="0">
+                        </div>
+                        <div class="tiempo-input">
+                            <label for="minutos">Minutos</label>
+                            <input type="number" id="minutos" name="minutos" min="0" value="0">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Precio total -->
+                <div class="form-section">
+                    <label class="form-label">Precio total</label>
+                    <div id="precioTotal" class="precio-total">0€</div>
+                </div>
+
+                <!-- Localizaciones (buscar ubicación) -->
+                <div class="form-section">
+                    <label for="buscarUbicacion" class="form-label">Buscar ubicación</label>
+                    <input type="text" id="buscarUbicacion" name="buscarUbicacion" placeholder="Ingresa tu dirección">
+                </div>
+
+                <!-- Método de pago -->
+                <div class="form-section">
+                    <label class="form-label">Método de pago</label>
+                    <div class="pago-options">
+                        <label>
+                            <input type="radio" name="pago" value="paypal" checked> PayPal
+                        </label>
+                        <label>
+                            <input type="radio" name="pago" value="tarjeta"> Tarjeta
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Botón de Reservar (centrado) -->
+                <div class="form-section boton-reserva">
+                    <button type="submit">Reservar</button>
+                </div>
+            </form>
         </div>
+
+        <!-- Contenedor del mapa -->
         <div class="reservar-mapa">
-            <p>[Aquí se insertará el mapa con la API]</p>
+            <p>[Aquí se insertará el mapa con los puntos de carga]</p>
+            <!-- Aquí implementarás que, al elegir una ubicación, se redirija a Google Maps -->
         </div>
     </div>
 </section>
+
+
 
 <script src="../assets/js/user.js"></script>
 </body>

@@ -1,0 +1,24 @@
+/* INICIO */
+.hero {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;     /* Centrado vertical */
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.main-logo {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.titulo-voltio {
+    font-size: 4rem;
+    margin: 0;
+}

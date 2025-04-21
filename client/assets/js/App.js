@@ -55,9 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
         'usuario@adminVoltio.com'      // administrador
     ];
     // Dominios permitidos
-    const userDomains = ['icloud.com', 'yahoo.es', 'hotmail.com', 'gmail.com'];
-    const techDomain = 'techVoltio.com';
-    const adminDomain = 'adminVoltio.com';
+    const userDomains = ['@icloud.com', '@yahoo.es', '@hotmail.com', '@gmail.com'];
+    const techDomain = '@techVoltio.com';
+    const adminDomain = '@adminVoltio.com';
     // -----------------------------------------------------------
     // 2. CARGAR DATOS "RECORDARME" (LocalStorage)
     // -----------------------------------------------------------
@@ -289,4 +289,43 @@ document.addEventListener('DOMContentLoaded', () => {
             createMessage.style.color = 'red';
         }, 2000); // <--- Asegúrate de dejar el espacio: setTimeout(fn, 2000);
     }
+    loginForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const emailValue = emailField.value.trim();
+        const passwordValue = passwordField.value.trim();
+        if (!emailValue || !passwordValue) {
+            alert('Por favor, completa todos los campos.');
+            return;
+        }
+        // Guardar en LocalStorage (si "Recordarme" está activado)
+        if (rememberCheckbox.checked) {
+            localStorage.setItem('savedEmail', emailValue);
+            localStorage.setItem('savedPassword', passwordValue);
+        } else {
+            localStorage.removeItem('savedEmail');
+            localStorage.removeItem('savedPassword');
+        }
+        // Determinar rol según dominio
+        const domain = emailValue.split('@')[1]?.toLowerCase() || '';
+
+        if (userDomains.includes(domain)) {
+            alert('Bienvenido, usuario');
+            window.location.href = 'usuarios/dashboard.html';
+            return;
+        }
+        if (domain === techDomain) {
+            alert('Bienvenido, técnico');
+            window.location.href = 'técnicos/dashboard.html';
+            return;
+        }
+        if (domain === adminDomain) {
+            alert('Bienvenido, administrador');
+            window.location.href = 'administradores/dashboard.html';
+            return;
+        }
+        // Por defecto => usuario
+        alert('Dominio no reconocido. Se asume usuario por defecto.');
+        window.location.href = 'usuarios/dashboard.html';
+    });
+
 });

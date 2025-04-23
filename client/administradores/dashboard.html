@@ -7,12 +7,14 @@
     <!-- Google Fonts: Bebas Neue -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
-
-    <link rel="stylesheet" href="../assets/css/user.css" />
+    <link rel="stylesheet" href="../assets/css/admin.css" />
     <link rel="icon" href="../assets/icons/rayo.ico" />
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
-
 <!-- HEADER -->
 <header>
     <img src="../assets/icons/rayo.ico" alt="Logo" class="logo-icon" />
@@ -24,13 +26,11 @@
     <div class="user-menu">
         <img src="../assets/icons/userIcon.ico" alt="Usuario" id="userIcon" />
         <div class="dropdown" id="dropdownMenu">
-            <a href="#">Configuración y privacidad</a>
-            <a href="#">Ayuda y asistencia</a>
-            <a href="#">Cerrar sesión</a>
+            <a href="#configuracion" id="abrirConfig">Configuración</a>
+            <a href="#cerrar" id="cerrarSesion">Cerrar sesión</a>
         </div>
     </div>
 </header>
-
 <!-- INICIO: Mismo diseño que la página de usuarios -->
 <section id="inicio" class="hero" style="background-image: url('../assets/img/naturaleza.jpg');">
     <div class="hero-content">
@@ -39,19 +39,86 @@
         <p>Especialistas en cargar tu coche</p>
     </div>
 </section>
-
-<!-- LOCALIZACIONES: Sección placeholder -->
+<!-- LOCALIZACIONES: Sección con mapa -->
 <section id="localizaciones" class="seccion" style="background-image: url('../assets/img/servicios.jpg');">
     <h2>Localizaciones</h2>
-    <p>Contenido en desarrollo...</p>
+    <p>Consulta y gestiona los cargadores disponibles.</p>
+    <div id="mapa-cargadores-admin" style="height: 700px; width: 90%; margin: auto; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.5);"></div>
+    <button id="btnAgregarPunto" style="margin-top:20px; padding:10px 20px; border:none; background:#333; color:white; border-radius:8px; cursor:pointer;">Añadir nuevo punto de carga</button>
 </section>
 
-<!-- ESTADÍSTICAS: Sección placeholder -->
 <section id="estadisticas" class="seccion" style="background-image: url('../assets/img/servicios.jpg');">
-    <h2>Estadísticas</h2>
-    <p>Contenido en desarrollo...</p>
+    <div class="estadisticas-contenido">
+        <h2>📊 Estadísticas</h2>
+        <p>Aquí puedes ver un resumen de las reservas realizadas por los usuarios, usuarios activos e incidencias.</p>
+        <!-- Reservas -->
+        <div class="tabla-reservas-container">
+            <h3>Reservas Registradas</h3>
+            <table id="tablaReservas">
+                <thead>
+                <tr>
+                    <th>Tipo de Cargador</th>
+                    <th>Horas</th>
+                    <th>Minutos</th>
+                    <th>Precio (€)</th>
+                    <th>Método de Pago</th>
+                    <th>Fecha</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <!-- NUEVA TABLA: Usuarios que han iniciado sesión -->
+        <div class="tabla-reservas-container">
+            <h3>Usuarios que han iniciado sesión</h3>
+            <table id="tablaAccesos">
+                <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Fecha de acceso</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <!-- NUEVA TABLA: Incidencias reportadas -->
+        <div class="tabla-reservas-container">
+            <h3>Incidencias Reportadas</h3>
+            <table id="tablaIncidencias">
+                <thead>
+                <tr>
+                    <th>Punto de Carga</th>
+                    <th>Mensaje</th>
+                    <th>Fecha</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
 </section>
-
-<script src="../assets/js/user.js"></script>
+<!-- MODAL CONFIGURACIÓN Y PRIVACIDAD (ADMIN) -->
+<div id="configModal" class="modal">
+    <div class="modal-content">
+        <h2>Configuración y Privacidad</h2>
+        <label for="adminUsername">Nombre de usuario</label>
+        <input type="text" id="adminUsername" placeholder="Tu nombre" />
+        <label for="adminEmail">Correo electrónico</label>
+        <input type="email" id="adminEmail" placeholder="tucorreo@voltio.com" />
+        <label for="adminPassword">Contraseña</label>
+        <input type="password" id="adminPassword" placeholder="••••••••" />
+        <div class="checkboxes">
+            <label><input type="checkbox" id="mostrarAdminEmail" /> Mostrar mi email públicamente</label>
+            <label><input type="checkbox" id="temaOscuroAdmin" /> Activar tema oscuro</label>
+        </div>
+        <div class="modal-buttons">
+            <button onclick="guardarConfiguracionAdmin()">Guardar configuración</button>
+            <button onclick="descargarDatosAdmin()">Descargar mis datos</button>
+            <button class="eliminar" onclick="eliminarCuentaAdmin()">Eliminar cuenta</button>
+            <button onclick="cerrarModalAdmin()">Cerrar</button>
+        </div>
+    </div>
+</div>
+<script src="../assets/js/admin.js"></script>
 </body>
 </html>

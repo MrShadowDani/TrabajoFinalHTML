@@ -4,9 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Voltio - Usuario</title>
-    <!-- Google Fonts: Bebas Neue -->
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AftFFC37gxc3yFsD3hJzwCd_aEhmfPg88naEhX1CE8ysy7S5sv5_A-iWJ69cAGcmgV1WxGNZznyKme1V&currency=EUR"></script>
 
     <link rel="stylesheet" href="../assets/css/user.css" />
     <link rel="icon" href="../assets/icons/rayo.ico" />
@@ -27,14 +35,15 @@
     <div class="user-menu">
         <img src="../assets/icons/userIcon.ico" alt="Usuario" id="userIcon" />
         <div class="dropdown" id="dropdownMenu">
-            <a href="#">Configuración y privacidad</a>
-            <a href="#">Ayuda y asistencia</a>
-            <a href="#">Cerrar sesión</a>
+            <a href="#" id="abrirConfig">Configuración y privacidad</a>
+            <a href="#" id="cerrarSesion">Cerrar sesión</a>
+
         </div>
     </div>
+
 </header>
 
-<!-- INICIO: Grupo centrado en la sección (Primera imagen, perfecto) -->
+<!-- INICIO -->
 <section id="inicio" class="hero" style="background-image: url('../assets/img/naturaleza.jpg');">
     <div class="hero-content">
         <img src="../assets/icons/rayo.ico" alt="Logo Principal" class="main-logo" />
@@ -43,7 +52,7 @@
     </div>
 </section>
 
-<!-- SERVICIOS: Sección con título y servicios centrados en la página (Segunda imagen) -->
+<!-- SERVICIOS -->
 <section id="servicios" class="seccion" style="background-image: url('../assets/img/servicios.jpg');">
     <h2>Servicios</h2>
     <div class="servicios-grid">
@@ -62,99 +71,62 @@
     </div>
 </section>
 
-<!-- LOGROS: Título y subtítulo ubicados arriba en el centro; imágenes agrupadas (Tercera imagen) -->
+<!-- LOGROS -->
 <section id="logros" class="seccion logros">
     <h2>Logros</h2>
     <p class="subtitulo-logros">Logros conseguidos hasta el día de hoy</p>
     <div class="galeria">
-        <div class="logro">
-            <img src="../assets/img/energiasrenovables.jpg" alt="Energías Renovables">
-            <div class="overlay">Utilizamos energías renovables</div>
-        </div>
-        <div class="logro">
-            <img src="../assets/img/nocontaminacion.jpg" alt="Sin Contaminación">
-            <div class="overlay">0 emisiones</div>
-        </div>
-        <div class="logro">
-            <img src="../assets/img/cocheelectrico.jpg" alt="Coche Eléctrico">
-            <div class="overlay">Cargamos todo tipo de coche</div>
-        </div>
-        <div class="logro">
-            <img src="../assets/img/geolocalizacion.jpg" alt="Geolocalización">
-            <div class="overlay">Electrolineras a tu alcance</div>
-        </div>
-        <div class="logro">
-            <img src="../assets/img/reservado.jpg" alt="Reservado">
-            <div class="overlay">Gestión y eficacia</div>
-        </div>
-        <div class="logro">
-            <img src="../assets/img/barato.jpg" alt="Accesible">
-            <div class="overlay">Al alcance de todos</div>
-        </div>
+        <div class="logro"><img src="../assets/img/energiasrenovables.jpg" alt="Energías Renovables"><div class="overlay">Utilizamos energías renovables</div></div>
+        <div class="logro"><img src="../assets/img/nocontaminacion.jpg" alt="Sin Contaminación"><div class="overlay">0 emisiones</div></div>
+        <div class="logro"><img src="../assets/img/cocheelectrico.jpg" alt="Coche Eléctrico"><div class="overlay">Cargamos todo tipo de coche</div></div>
+        <div class="logro"><img src="../assets/img/geolocalizacion.jpg" alt="Geolocalización"><div class="overlay">Electrolineras a tu alcance</div></div>
+        <div class="logro"><img src="../assets/img/reservado.jpg" alt="Reservado"><div class="overlay">Gestión y eficacia</div></div>
+        <div class="logro"><img src="../assets/img/barato.jpg" alt="Accesible"><div class="overlay">Al alcance de todos</div></div>
     </div>
 </section>
 
-<!-- NOSOTROS: Contenido ubicado arriba en el centro (Cuarta imagen) -->
+<!-- NOSOTROS -->
 <section id="nosotros" class="seccion" style="background-image: url('../assets/img/periodico.jpg');">
     <div class="nosotros-contenido">
         <h2>Nosotros</h2>
         <p>
             Somos una empresa dedicada a la movilidad eléctrica. Nuestro objetivo es acercar la carga a cada rincón de la ciudad con soluciones sostenibles, accesibles y modernas. Trabajamos con pasión, tecnología y un fuerte compromiso ecológico para transformar la manera en la que te mueves. Con una amplia experiencia en el sector, personal altamente cualificado y una app propia, garantizamos un servicio eficiente, amigable y siempre disponible.
         </p>
-        <!-- Para modificar la altura y anchura del cuadro blanco, revisa las propiedades de .nosotros-contenido en el CSS -->
     </div>
 </section>
 
 <!-- CONTACTO -->
 <section id="contacto" class="seccion contacto-seccion" style="background-image: url('../assets/img/mapa.jpg');">
     <div class="contacto-container">
-        <!-- Título centrado -->
         <h2>Encuéntranos</h2>
-
-        <!-- Información de contacto a la izquierda -->
         <div class="info-contacto">
             <p>C. de Arapiles, 13<br>28015 Madrid</p>
             <p>info@Voltio.com</p>
             <p>Tel: +34 918 109 200</p>
-            <p><strong>Horario:</strong></p>
-            <p>
-                Lun–Vie: 7am – 10pm<br>
-                Sábado: 8am – 10pm<br>
-                Domingo: 8am – 11pm
-            </p>
+            <p><strong>Horario:</strong><br>Lun–Vie: 7am – 10pm<br>Sábado: 8am – 10pm<br>Domingo: 8am – 11pm</p>
         </div>
-
-        <!-- Formulario a la derecha -->
         <form class="formulario">
             <label for="nombre">Nombre</label>
             <input type="text" id="nombre" placeholder="Nombre" required />
-
             <label for="apellido">Apellido</label>
             <input type="text" id="apellido" placeholder="Apellido" required />
-
             <label for="email">Email</label>
             <input type="email" id="email" placeholder="Email" required />
-
             <label for="asunto">Asunto</label>
             <input type="text" id="asunto" placeholder="Asunto" />
-
             <label for="mensaje">Mensaje</label>
             <textarea id="mensaje" placeholder="Mensaje" required></textarea>
-
             <button type="submit">Enviar</button>
         </form>
-
     </div>
 </section>
-
 
 <!-- RESERVAR -->
 <section id="reservar" class="seccion" style="background-image: url('../assets/img/servicios.jpg');">
     <div class="reservar-container">
-        <!-- Contenedor del formulario de reserva (fondo blanco) -->
+        <!-- Formulario -->
         <div class="reservar-form">
             <form id="reservaForm">
-                <!-- Tipo de cargador (desplegable) -->
                 <div class="form-section">
                     <label for="tipoCargador" class="form-label">Tipo de cargador</label>
                     <select id="tipoCargador" name="tipoCargador">
@@ -164,14 +136,12 @@
                         <option value="compatible" data-precio="20">Compatible (20€/h)</option>
                     </select>
                 </div>
-
-                <!-- Tiempo de uso (horas y minutos) -->
                 <div class="form-section">
                     <label class="form-label">Tiempo de uso</label>
                     <div class="tiempo-container">
                         <div class="tiempo-input">
                             <label for="horas">Horas</label>
-                            <input type="number" id="horas" name="horas" min="0" value="0">
+                            <input type="number" id="horas" name="horas" min="0" value="0" required>
                         </div>
                         <div class="tiempo-input">
                             <label for="minutos">Minutos</label>
@@ -179,49 +149,76 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Precio total -->
                 <div class="form-section">
                     <label class="form-label">Precio total</label>
                     <div id="precioTotal" class="precio-total">0€</div>
                 </div>
-
-                <!-- Localizaciones (buscar ubicación) -->
                 <div class="form-section">
                     <label for="buscarUbicacion" class="form-label">Buscar ubicación</label>
                     <input type="text" id="buscarUbicacion" name="buscarUbicacion" placeholder="Ingresa tu dirección">
                 </div>
 
-                <!-- Método de pago -->
+                <!-- PayPal integrado -->
                 <div class="form-section">
-                    <label class="form-label">Método de pago</label>
-                    <div class="pago-options">
-                        <label>
-                            <input type="radio" name="pago" value="paypal" checked> PayPal
-                        </label>
-                        <label>
-                            <input type="radio" name="pago" value="tarjeta"> Tarjeta
-                        </label>
-                    </div>
+                    <div id="paypal-button-container"></div>
+                </div>
+                <div class="boton-reservar">
+                    <button id="guardarReserva">Reservar</button>
                 </div>
 
-                <!-- Botón de Reservar (centrado) -->
-                <div class="form-section boton-reserva">
-                    <button type="submit">Reservar</button>
-                </div>
             </form>
         </div>
 
-        <!-- Contenedor del mapa -->
+        <!-- Mapa -->
         <div class="reservar-mapa">
-            <p>[Aquí se insertará el mapa con los puntos de carga]</p>
-            <!-- Aquí implementarás que, al elegir una ubicación, se redirija a Google Maps -->
+            <div id="map" class="reservar-mapa"></div>
         </div>
     </div>
 </section>
 
 
 
+<!-- MODAL CONFIGURACIÓN Y PRIVACIDAD -->
+<div id="configModal" class="modal">
+    <div class="modal-content">
+        <h2>Configuración y Privacidad</h2>
+
+        <label for="username">Nombre de usuario</label>
+        <input type="text" id="username" placeholder="Tu nombre" />
+
+        <label for="emailConfig">Correo electrónico</label>
+        <input type="email" id="emailConfig" placeholder="tucorreo@ejemplo.com" />
+
+        <label for="passwordConfig">Contraseña</label>
+        <input type="password" id="passwordConfig" placeholder="••••••••" />
+
+        <div class="checkboxes">
+            <label><input type="checkbox" id="mostrarEmail" /> Mostrar mi email públicamente</label>
+            <label><input type="checkbox" id="temaOscuro" /> Activar tema oscuro</label>
+        </div>
+
+        <div class="modal-buttons">
+            <button onclick="guardarConfiguracion()">Guardar configuración</button>
+            <button onclick="descargarDatos()">Descargar mis datos</button>
+            <button class="eliminar" onclick="eliminarCuenta()">Eliminar cuenta</button>
+            <button onclick="cerrarModal()">Cerrar</button>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL DE REPORTE -->
+<div id="modalReporte" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); align-items:center; justify-content:center; z-index:999;">
+    <div style="background:white; padding:30px; border-radius:12px; max-width:400px; width:90%;">
+        <h3 id="nombreCargadorReporte" style="margin-top:0;">Cargador</h3>
+        <label for="motivoReporte">Motivo del reporte</label>
+        <textarea id="motivoReporte" rows="5" placeholder="Describe el problema..." style="width:100%; padding:10px; border-radius:6px; border:1px solid #ccc;"></textarea>
+        <div style="text-align:right; margin-top:10px;">
+            <button onclick="cerrarModalReporte()" style="background:#ccc; border:none; padding:8px 16px; border-radius:6px; margin-right:8px;">Cancelar</button>
+            <button onclick="enviarReporte()" style="background:#333; color:white; border:none; padding:8px 16px; border-radius:6px;">Enviar</button>
+        </div>
+    </div>
+</div>
 <script src="../assets/js/user.js"></script>
+
 </body>
 </html>

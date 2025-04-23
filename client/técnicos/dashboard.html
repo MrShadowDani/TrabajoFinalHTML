@@ -4,16 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Voltio - Técnico</title>
-    <!-- Google Fonts: Bebas Neue -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
-
-    <link rel="stylesheet" href="../assets/css/user.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="../assets/css/technician.css" />
     <link rel="icon" href="../assets/icons/rayo.ico" />
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
     <img src="../assets/icons/rayo.ico" alt="Logo" class="logo-icon" />
     <nav class="menu">
@@ -25,13 +24,12 @@
         <img src="../assets/icons/userIcon.ico" alt="Usuario" id="userIcon" />
         <div class="dropdown" id="dropdownMenu">
             <a href="#">Configuración y privacidad</a>
-            <a href="#">Ayuda y asistencia</a>
+
             <a href="#">Cerrar sesión</a>
         </div>
     </div>
 </header>
 
-<!-- INICIO: Mismo diseño que la página de usuarios -->
 <section id="inicio" class="hero" style="background-image: url('../assets/img/naturaleza.jpg');">
     <div class="hero-content">
         <img src="../assets/icons/rayo.ico" alt="Logo Principal" class="main-logo" />
@@ -40,18 +38,70 @@
     </div>
 </section>
 
-<!-- EMPLAZAMIENTOS: Sección placeholder -->
-<section id="emplazamientos" class="seccion" style="background-image: url('../assets/img/servicios.jpg');">
-    <h2>Emplazamientos</h2>
-    <p>Contenido en desarrollo...</p>
+<section id="mapa-emplacamientos" class="seccion">
+    <h2>Mapa de Puntos de Carga</h2>
+    <p>Pulsa sobre un cargador para ver detalles y modificar su disponibilidad</p>
+    <div class="contenedor-mapa-reportes">
+        <div id="mapa-cargadores"></div>
+        <div class="reporte-lateral">
+            <h3>Reportes de Usuarios</h3>
+            <ul id="lista-reportes" class="lista-reportes"></ul>
+        </div>
+    </div>
 </section>
 
-<!-- SOPORTE: Sección placeholder -->
-<section id="soporte" class="seccion" style="background-image: url('../assets/img/servicios.jpg');">
-    <h2>Soporte</h2>
-    <p>Contenido en desarrollo...</p>
-</section>
+<!-- SOPORTE -->
+<section id="soporte" class="seccion soporte-section">
+    <div class="soporte-container">
+        <h2>📨 Mensajes de Contacto</h2>
 
-<script src="../assets/js/user.js"></script>
+        <div class="filtros-mensajes">
+            <input type="text" id="filtroNombre" placeholder="🔍 Buscar por nombre...">
+            <input type="text" id="filtroEmail" placeholder="🔍 Buscar por email...">
+            <input type="text" id="filtroAsunto" placeholder="🔍 Buscar por asunto...">
+        </div>
+
+        <div class="tabla-mensajes">
+            <table id="tablaMensajes">
+                <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Asunto</th>
+                    <th>Mensaje</th>
+                    <th>Eliminar</th>
+                </tr>
+                </thead>
+                <tbody id="cuerpoTablaMensajes">
+                <!-- JS insertará los mensajes aquí -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<div id="configModal" class="modal-config">
+    <div class="modal-content-config">
+        <h2>Configuración y Privacidad</h2>
+        <form>
+            <label>Nombre de usuario</label>
+            <input type="text" placeholder="Tu nombre" />
+            <label>Correo electrónico</label>
+            <input type="email" placeholder="tucorreo@voltio.com" />
+            <label>Contraseña</label>
+            <input type="password" placeholder="********" />
+            <div class="config-options">
+                <label><input type="checkbox" /> Mostrar mi email públicamente</label>
+                <label><input type="checkbox" /> Activar tema oscuro</label>
+            </div>
+            <button class="btn guardar">Guardar configuración</button>
+            <button class="btn">Descargar mis datos</button>
+            <button class="btn eliminar">Eliminar cuenta</button>
+            <button type="button" class="btn cerrar" onclick="cerrarModal()">Cerrar</button>
+        </form>
+    </div>
+</div>
+
+<script src="../assets/js/technician.js"></script>
 </body>
 </html>

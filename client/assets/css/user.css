@@ -387,4 +387,232 @@ input[type="text"] {
 .boton-reserva button:hover {
     background: #555;
 }
+.reservar-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 40px;
+}
 
+.reservar-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    height: 600px; /* ✅ misma altura que el mapa */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0; /* ❌ sin top, sin transform */
+}
+
+
+
+.reservar-mapa {
+    width: 100%;
+    max-width: 900px;
+    height: 600px;
+    margin: 0; /* elimina cualquier desplazamiento */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+/* Modal estilo Voltio */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    font-family: 'Palatino Linotype', Palatino, serif;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    color: black;
+}
+
+.modal-content h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal-content label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="email"],
+.modal-content input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.checkboxes {
+    margin-top: 20px;
+}
+
+.checkboxes label {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-weight: normal;
+}
+
+.checkboxes input {
+    margin-right: 10px;
+}
+
+.modal-buttons {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-buttons button {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.modal-buttons .eliminar {
+    background: #8b0000;
+}
+
+.modal-buttons button:hover {
+    background: #555;
+}
+
+.modal-buttons .eliminar:hover {
+    background: #a80000;
+}
+#mapa-emplacamientos {
+    background-image: url('../img/servicios.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+
+
+#mapa-emplacamientos h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
+}
+
+#mapa-emplacamientos p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+#mapa-cargadores {
+    width: 90%;
+    max-width: 1200px;
+    height: 700px; /* ← aumentamos la altura */
+    margin: 40px auto;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.modal-reporte {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-contenido {
+    background: white;
+    padding: 25px;
+    width: 350px;
+    max-width: 90%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-contenido h3 {
+    margin-top: 0;
+}
+
+.modal-contenido textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    resize: vertical;
+}
+
+.modal-contenido .acciones {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-contenido button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-contenido button:first-child {
+    background-color: #28a745;
+    color: white;
+}
+
+.modal-contenido button:last-child {
+    background-color: #dc3545;
+    color: white;
+}
+.boton-reservar {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.boton-reservar button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.boton-reservar button:hover {
+    background-color: #218838;
+}

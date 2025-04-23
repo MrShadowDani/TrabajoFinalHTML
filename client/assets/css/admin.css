@@ -22,3 +22,815 @@
     font-size: 4rem;
     margin: 0;
 }
+.tabla-reservas-container {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 1000px;
+    margin: 20px auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    overflow-x: auto;
+}
+
+.tabla-reservas-container h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#tablaReservas {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+#tablaReservas th,
+#tablaReservas td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+#tablaReservas th {
+    background-color: #333;
+    color: white;
+}
+
+#tablaReservas tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.estadisticas-contenido {
+    background-color: white;
+    color: black;
+    padding: 30px;
+    border-radius: 16px;
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.tabla-reservas-container {
+    margin-top: 30px;
+    overflow-x: auto;
+}
+
+.tabla-reservas-container table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#tablaReservas th, #tablaReservas td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+#tablaReservas th {
+    background-color: #333;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#tablaReservas tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.config-modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+}
+
+.config-contenido {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.config-contenido h2 {
+    margin-bottom: 20px;
+    font-size: 1.7rem;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+}
+
+.config-contenido label {
+    display: block;
+    margin-top: 15px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.config-contenido input[type="text"],
+.config-contenido input[type="email"],
+.config-contenido input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.opciones-checkbox {
+    margin-top: 15px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.2s;
+}
+
+.btn.oscuro {
+    background-color: #333;
+    color: white;
+}
+
+.btn.oscuro:hover {
+    background-color: #555;
+}
+
+.btn.rojo {
+    background-color: #990000;
+    color: white;
+}
+
+.btn.rojo:hover {
+    background-color: #cc0000;
+}
+
+.btn.cerrar {
+    background-color: #666;
+    color: white;
+}
+
+.btn.cerrar:hover {
+    background-color: #444;
+}
+
+#mapa-cargadores-admin {
+    width: 90%;
+    max-width: 1200px;
+    height: 700px;
+    margin: 40px auto;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* FUENTES:
+   - Los títulos se muestran en Bebas Neue (puedes cambiarlo a Tahoma si lo prefieres).
+   - El resto del texto se muestra en Palatino.
+*/
+body {
+    margin: 0;
+    font-family: 'Palatino Linotype', Palatino, serif;
+}
+
+/* Para que todos los elementos hereden la fuente del body, a menos que se especifique lo contrario */
+* {
+    font-family: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Bebas Neue, sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* HEADER */
+header {
+    background: #222;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.menu a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.user-menu {
+    position: relative;
+}
+
+.user-menu img {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    top: 40px;
+    width: 200px;
+    z-index: 10;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown.show {
+    display: block;
+}
+
+/* INICIO */
+.hero {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.main-logo {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.titulo-voltio {
+    font-size: 4rem;
+    margin: 0;
+}
+
+/* Sección general (centrado en vertical y horizontal) */
+.seccion {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Si algún contenedor específico (como #nosotros) tenía ajustes distintos, los unifico para centrar el contenido */
+#nosotros {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.seccion h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    position: relative;
+    text-align: center;
+}
+
+/* Línea de separación en h2: por defecto negra para todas las secciones */
+.seccion h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: black;
+    margin: 10px auto 30px;
+}
+
+/* Sección de Servicios: sobreescribe para línea blanca */
+#servicios h2::after {
+    background-color: white;
+}
+
+/* SERVICIOS */
+#servicios .servicios-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.servicio {
+    width: 250px;
+    text-align: center;
+}
+
+.servicio img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+/* LOGROS */
+#logros .logros-grid {
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+}
+
+.logros {
+    background: #fff;
+    color: black;
+}
+
+.subtitulo-logros {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
+}
+
+.logro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 280px;
+}
+
+.logro img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.logro .overlay {
+    background: transparent;
+    color: black;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* NOSOTROS */
+.nosotros-contenido {
+    background: white;
+    color: black;
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* CONTACTO */
+.contacto-seccion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.contacto-container {
+    max-width: 600px;
+    width: 100%;
+    background: #fff;
+    color: #333;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    margin: 20px auto;
+}
+
+.contacto-container h2 {
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.info-contacto {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.formulario {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+    text-align: left;
+}
+
+.formulario label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.formulario input,
+.formulario textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font: inherit;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.formulario button {
+    display: block;
+    margin: 10px auto 0;
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formulario button:hover {
+    background: #555;
+}
+
+/* RESERVAR */
+/* Reservar section */
+.reservar-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.reservar-form {
+    background: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.reservar-mapa {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff;
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Secciones dentro del formulario */
+.form-section {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Inputs y select */
+select,
+input[type="number"],
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Contenedor para tiempo de uso */
+.tiempo-container {
+    display: flex;
+    gap: 10px;
+}
+
+.tiempo-input {
+    flex: 1;
+}
+
+/* Precio total */
+.precio-total {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+/* Opciones de método de pago */
+.pago-options {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Botón de reserva centrado */
+.boton-reserva {
+    text-align: center;
+}
+
+.boton-reserva button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.boton-reserva button:hover {
+    background: #555;
+}
+.reservar-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 40px;
+}
+
+.reservar-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    height: 600px; /* ✅ misma altura que el mapa */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0; /* ❌ sin top, sin transform */
+}
+
+
+
+.reservar-mapa {
+    width: 900px;
+    height: 600px;
+    margin: 0; /* elimina cualquier desplazamiento */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+/* Modal estilo Voltio */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    font-family: 'Palatino Linotype', Palatino, serif;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    color: black;
+}
+
+.modal-content h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal-content label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="email"],
+.modal-content input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.checkboxes {
+    margin-top: 20px;
+}
+
+.checkboxes label {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-weight: normal;
+}
+
+.checkboxes input {
+    margin-right: 10px;
+}
+
+.modal-buttons {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-buttons button {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.modal-buttons .eliminar {
+    background: #8b0000;
+}
+
+.modal-buttons button:hover {
+    background: #555;
+}
+
+.modal-buttons .eliminar:hover {
+    background: #a80000;
+}
+#mapa-emplacamientos {
+    background-image: url('../img/servicios.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+
+
+#mapa-emplacamientos h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
+}
+
+#mapa-emplacamientos p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+#mapa-cargadores {
+    width: 90%;
+    max-width: 1200px;
+    height: 700px; /* ← aumentamos la altura */
+    margin: 40px auto;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.modal-reporte {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-contenido {
+    background: white;
+    padding: 25px;
+    width: 350px;
+    max-width: 90%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-contenido h3 {
+    margin-top: 0;
+}
+
+.modal-contenido textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    resize: vertical;
+}
+
+.modal-contenido .acciones {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-contenido button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-contenido button:first-child {
+    background-color: #28a745;
+    color: white;
+}
+
+.modal-contenido button:last-child {
+    background-color: #dc3545;
+    color: white;
+}
+.boton-reservar {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.boton-reservar button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.boton-reservar button:hover {
+    background-color: #218838;
+}

@@ -379,3 +379,34 @@ form input[type="text"] {
     margin-top: 10px;
     color: red;
 }
+/* ============================================
+   11. MEDIA QUERIES PARA RESPONSIVE
+============================================ */
+/* Tablets y móviles grandecitos */
+@media (max-width: 768px) {
+    .login-container {
+        /* Pasa a columna */
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        width: 95%;
+    }
+    .login-left, .login-right {
+        padding: 20px;
+    }
+    .login-left h1 { font-size: 2em; }
+    .login-right h2 { font-size: 1.8em; }
+    form { width: 100%; }
+}
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .login-left p,
+    .login-right label {
+        font-size: 1em;
+    }
+    .login-btn,
+    .create-btn,
+    .modal-actions button {
+        font-size: 1rem;
+        padding: 8px;
+    }
+}

@@ -1,54 +1,31 @@
-// auth.controller.js
-const bcrypt = require('bcrypt');
+const users = []; // En un caso real, usarías una base de datos
 
-const usersDB = [
-    {
-        email: 'admin@miempresaAdmin.com',
-        // contraseña hasheada de "admin123" (ejemplo)
-        password: '$2b$10$g0MGHTbkHZ3eD...etc...',
-        role: 'admin'
-    },
-    {
-        email: 'tecnico@techmiempresa.com',
-        password: '$2b$10$zA1P2...etc...',
-        role: 'tech'
-    },
-    {
-        email: 'usuario@icloud.com',
-        password: '$2b$10$QRMfB...etc...',
-        role: 'user'
-    }
-];
+// Controlador para el login
+exports.login = (req, res) => {
+    const { email, password } = req.body;
 
-exports.login = async (req, res) => {
-    try {
-        const { email, password } = req.body;
+    // Simulamos la búsqueda de un usuario
+    const user = users.find(u => u.email === email && u.password === password);
 
-        // 1. Buscar el usuario en la "base de datos"
-        const user = usersDB.find(u => u.email === email);
-        if (!user) {
-            return res.status(401).json({ message: 'Usuario no encontrado' });
-        }
-
-        // 2. Comparar contraseñas con bcrypt
-        const match = await bcrypt.compare(password, user.password);
-        if (!match) {
-            return res.status(401).json({ message: 'Contraseña incorrecta' });
-        }
-
-        // 3. Retornar respuesta exitosa, con rol, etc.
-        return res.status(200).json({
-            message: 'Login exitoso',
-            role: user.role
-            // aquí podrías generar un token JWT si lo deseas
-        });
-    } catch (error) {
-        console.error(error);
-        return res.status(500).json({ message: 'Error en el servidor' });
+    if (user) {
+        res.status(200).json({ message: 'Login exitoso', user });
+    } else {
+        res.status(400).json({ message: 'Credenciales incorrectas' });
     }
 };
 
-exports.register = async (req, res) => {
-    // Ejemplo de registro
-    // ...
+// Controlador para el registro
+exports.register = (req, res) => {
+    const { email, password } = req.body;
+
+    // Verifica si el usuario ya existe
+    if (users.find(u => u.email === email)) {
+        return res.status(400).json({ message: 'Usuario ya existe' });
+    }
+
+    // Registra al nuevo usuario
+    const newUser = { email, password };
+    users.push(newUser);
+
+    res.status(201).json({ message: 'Usuario registrado', user: newUser });
 };
